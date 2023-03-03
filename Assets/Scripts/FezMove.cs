@@ -5,14 +5,16 @@ public class FezMove : MonoBehaviour {
 
  private int Horizontal = 0;
 
- public Animator anim;
- public float MovementSpeed = 5f;
- public float Gravity = 1f;
- public CharacterController charController;
- private FacingDirection _myFacingDirection;
- public float JumpHeight = 0f;
- public bool _jumping = false;
- private float degree = 0;
+  public Animator anim;
+  public float MovementSpeed = 5f;
+  public float Gravity = 1f;
+  public CharacterController charController;
+  private FacingDirection _myFacingDirection;
+  public float JumpHeight = 20f;
+  public bool _jumping = false;
+  private float degree = 0;
+
+
 
 
  public FacingDirection CmdFacingDirection {
@@ -25,14 +27,14 @@ public class FezMove : MonoBehaviour {
  // Update is called once per frame
  void Update () {
 
-  if (Input.GetAxis ("Horizontal") < 0)
+  if (Input.GetKeyDown(KeyCode.S))
    Horizontal = -1;
-  else if (Input.GetAxis ("Horizontal") > 0)
+  else if (Input.GetKeyDown(KeyCode.D))
    Horizontal = 1;
   else
    Horizontal = 0;
 
-  if (Input.GetKeyDown (KeyCode.Space) && !_jumping) 
+  if (Input.GetKeyDown (KeyCode.W) && !_jumping) 
   {
    _jumping = true;
    StartCoroutine(JumpingWait());
