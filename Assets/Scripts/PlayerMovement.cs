@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour {
     private bool isSlamming = false;
     private bool isFrozen = false;
     private float hInput;
+    public int maxJumps = 2;
+    private int currentJumps = 2;
     private Rigidbody _rb;
     enum playerAction {jump};
+    private bool isGrounded = true;
 
 
     // Start is called before the first frame update
@@ -31,10 +34,12 @@ public class PlayerMovement : MonoBehaviour {
 
 
         // Jump
-        if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false)) {
-                _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-                _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-            }
+        if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
+            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+            currentJumps--;
+            Debug.Log(currentJumps);
+        }
 
         // Dash
         if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
@@ -42,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Downslam
-        if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false)) {
+        if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
             StartCoroutine(freezePlayerTimer(slamFreezeTime));
         }
 
@@ -66,6 +71,19 @@ public class PlayerMovement : MonoBehaviour {
             _rb.MovePosition(this.transform.position + this.transform.right * hInput * Time.fixedDeltaTime);
         }
     }
+
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
+            currentJumps = maxJumps;
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
+            isGrounded = false;
+        }
+    }
     
     private IEnumerator freezePlayerTimer(float time) {
         freezePlayer();
@@ -79,10 +97,13 @@ public class PlayerMovement : MonoBehaviour {
     private IEnumerator dash() {
         canDash = false;
         isDashing = true;
-        _rb.drag = 4;
         _rb.useGravity = false;
         _rb.velocity = new Vector3(dashSpeed, 0f, 0f);
-        yield return new WaitForSecondsRealtime(dashTime);
+        yield return new WaitForSecondsRealtime(dashTime/3);
+        _rb.drag = 10;
+        yield return new WaitForSecondsRealtime(dashTime/3);
+        _rb.drag = 20;
+        yield return new WaitForSecondsRealtime(dashTime/3);
         _rb.drag = 1;
         isDashing = false;
         _rb.useGravity = true;
