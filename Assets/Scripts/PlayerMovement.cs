@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
     private float hInput;
     public int maxJumps = 2;
     private int currentJumps = 2;
+    public float speed;
     private Rigidbody _rb;
     enum playerAction {jump};
     private bool isGrounded = true;
@@ -53,12 +54,22 @@ public class PlayerMovement : MonoBehaviour {
 
         // Left Rotate
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-            transform.Rotate(Vector3.up * 90);
+            Quaternion startRotation = Camera.main.transform.rotation;
+            Quaternion endRotation = startRotation *= Quaternion.Euler(0,90,0);
+            float rotateSpeed = 5.0f;
+            Quaternion slowRotateLeft = Quaternion.Lerp(startRotation, endRotation, rotateSpeed);
+            //transform.rotation = slowRotateLeft;
+            transform.Rotate(0, -speed * Time.deltaTime, 0);
         }
 
         // Right Rotate
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            transform.Rotate(Vector3.down * 90);
+            Quaternion startRotation = Camera.main.transform.rotation;
+            Quaternion endRotation = startRotation *= Quaternion.Euler(0,-90,0);
+            float rotateSpeed = 5.0f;
+            Quaternion slowRotateLeft = Quaternion.Lerp(startRotation, endRotation, rotateSpeed);
+            //transform.rotation = slowRotateLeft;
+            transform.Rotate(0, -speed * Time.deltaTime, 0);
         }
 
 
