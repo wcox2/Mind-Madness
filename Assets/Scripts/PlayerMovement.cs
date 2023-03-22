@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     private float pi = Mathf.PI;
+    public GameObject sprite;
     public float movementSpeed = 5f;
     public float jumpVelocity = 5f;
     public float dashSpeed = 5f;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody _rb;
     enum playerAction {jump};
     private bool isGrounded = true;
+    private bool isFacingRight = true;
 
 
     // Start is called before the first frame update
@@ -49,6 +51,16 @@ public class PlayerMovement : MonoBehaviour {
         // Downslam
         if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
             StartCoroutine(freezePlayerTimer(slamFreezeTime));
+        }
+
+        // Player Orientation Change
+        if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
+            isFacingRight = true;
+            sprite.transform.Rotate(0, 180, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
+            isFacingRight = false;
+            sprite.transform.Rotate(0, 180, 0);
         }
 
         // // Left Rotate
@@ -108,7 +120,14 @@ public class PlayerMovement : MonoBehaviour {
         canDash = false;
         isDashing = true;
         _rb.useGravity = false;
-        _rb.velocity = new Vector3(dashSpeed, 0f, 0f);
+        if (isFacingRight) {
+            _rb.velocity = new Vector3(dashSpeed * (Mathf.Cos(this.transform.eulerAngles.y / 180 * pi)), 0f,
+                                        -dashSpeed * Mathf.Sin(this.transform.eulerAngles.y / 180 * pi));
+        }
+        else {
+            _rb.velocity = new Vector3(-dashSpeed * (Mathf.Cos(this.transform.eulerAngles.y / 180 * pi)), 0f,
+                                        dashSpeed * Mathf.Sin(this.transform.eulerAngles.y / 180 * pi));
+        }
         yield return new WaitForSecondsRealtime(dashTime/3);
         _rb.drag = 10;
         yield return new WaitForSecondsRealtime(dashTime/3);

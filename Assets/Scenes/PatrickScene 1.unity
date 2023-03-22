@@ -130,26 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1709237497, guid: 231672fa430695847838801a4fe75f17, type: 3}
-      propertyPath: rSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292264743921253725, guid: 231672fa430695847838801a4fe75f17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292264743921253725, guid: 231672fa430695847838801a4fe75f17, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292264743921253725, guid: 231672fa430695847838801a4fe75f17, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 27.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 8292264744049606510, guid: 231672fa430695847838801a4fe75f17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.61
-      objectReference: {fileID: 0}
     - target: {fileID: 8292264744371486762, guid: 231672fa430695847838801a4fe75f17, type: 3}
       propertyPath: m_Name
       value: Player
@@ -198,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8292264744371486766, guid: 231672fa430695847838801a4fe75f17, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 827647653}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231672fa430695847838801a4fe75f17, type: 3}
 --- !u!1001 &386264024
@@ -257,6 +241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ab9ed2f67b84828b260ff4cc604ffe, type: 3}
+--- !u!1 &827647653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8292264743921253722, guid: 231672fa430695847838801a4fe75f17, type: 3}
+  m_PrefabInstance: {fileID: 47312304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681473349
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,90 +350,6 @@ PrefabInstance:
     - target: {fileID: 455281943942145338, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
       propertyPath: m_Name
       value: 3x3 Grass
-      objectReference: {fileID: 0}
-    - target: {fileID: 455281943942145338, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403480845690648, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403480845690648, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403480845690727, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403480855682212, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403480855682213, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481637300907, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481637300908, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481657193965, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481657193966, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481784815664, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481784815665, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481795449274, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403481795449275, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482063674624, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482063674639, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482329193825, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482329193826, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482331409761, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482331409762, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2136403482331409762, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7120482638147999538, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
       propertyPath: m_RootOrder
