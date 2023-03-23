@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a464d6d1ba3ffb649bde31098b8138e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 8292264743921253722}
   movementSpeed: 5
   jumpVelocity: 5
   dashSpeed: 15
