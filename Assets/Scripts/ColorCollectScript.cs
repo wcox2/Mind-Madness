@@ -6,12 +6,12 @@ public class ColorCollectScript : MonoBehaviour {
     public GameObject player;
     public GameObject platform;
     private Collider playerCollider;
-    private Collider objectCollider;
+    private Collider colorCollider;
     
 
 
     void Start() {
-        objectCollider = GetComponent<Collider>();
+        colorCollider = GetComponent<Collider>();
         playerCollider = player.GetComponent<Collider>();
     }
 

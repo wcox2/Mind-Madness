@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool isDashing = false;
     public float slamForce = 20f;
     public float slamFreezeTime = 1f;
-    private bool isSlamming = false;
+    public bool isSlamming = false;
     private bool isFrozen = false;
     private float hInput;
     public int maxJumps = 2;
@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
+        StartCoroutine(waitForSlam());
         if (collision.gameObject.CompareTag("Ground")) {
             currentJumps = maxJumps;
             isGrounded = true;
@@ -108,12 +109,18 @@ public class PlayerMovement : MonoBehaviour {
     }
     
     private IEnumerator freezePlayerTimer(float time) {
+        isSlamming = true;
         freezePlayer();
         yield return new WaitForSecondsRealtime(time);
         _rb.isKinematic = false;
         _rb.velocity = new Vector3(0, 0, 0);
         _rb.AddForce(Vector3.down * slamForce, ForceMode.Impulse);
         isFrozen = false;
+    }
+
+    private IEnumerator waitForSlam() {
+        yield return new WaitForEndOfFrame();
+        isSlamming = false;
     }
 
     private IEnumerator dash() {
