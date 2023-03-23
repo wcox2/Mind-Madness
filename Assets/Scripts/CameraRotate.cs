@@ -7,8 +7,6 @@ public class CameraRotate : MonoBehaviour
     public GameObject targetObject;
     private float targetAngle = 0;
     const float rotationAmount = 1.5f;
-    public float rDistance = 1.0f;
-    public float rSpeed = 1.0f;
       
     // Update is called once per frame
     void Update()
@@ -29,11 +27,7 @@ public class CameraRotate : MonoBehaviour
       
      protected void Rotate()
      {
- 
-         float step = rSpeed * Time.deltaTime;
-         float orbitCircumfrance = 2F * rDistance * Mathf.PI;
-         float distanceDegrees = (rSpeed / orbitCircumfrance) * 360;
-         float distanceRadians = (rSpeed / orbitCircumfrance) * 2 * Mathf.PI;
+
          
          if (targetAngle>0)
          {
