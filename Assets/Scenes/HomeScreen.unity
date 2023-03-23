@@ -554,8 +554,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_HighlightedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 0.6117647}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
+    m_SelectedColor: {r: 1, g: 0.3529412, b: 0.7411765, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -574,7 +574,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1139127482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1588075111}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1139127482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,8 +688,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_HighlightedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 0.6117647}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
+    m_SelectedColor: {r: 1, g: 0.3537736, b: 0.74030143, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -696,7 +708,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1181056188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1588075113}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1181056188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,8 +1025,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_HighlightedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 0.6117647}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
+    m_SelectedColor: {r: 1, g: 0.3529412, b: 0.7411765, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1021,7 +1045,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1522716365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1588075113}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1522716365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,6 +1105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588075112}
+  - component: {fileID: 1588075113}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1092,6 +1129,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1588075113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588075111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3930aa1da8ad477394270021fb28f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1703083874
 GameObject:
   m_ObjectHideFlags: 0
