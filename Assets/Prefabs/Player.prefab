@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4740046384175415121}
   m_Layer: 0
   m_Name: Sprite_MainCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1917961119}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 4740046384175415125}
   movementSpeed: 5
-  jumpVelocity: 5
+  jumpVelocity: 6
   dashSpeed: 15
   dashTime: 0.5
   dashCooldown: 0.5
@@ -259,8 +259,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.76895404, y: 0.9441433, z: 0.055077408}
-  m_Center: {x: -0.0052978992, y: 0.0059332848, z: -0.0036720093}
+  m_Size: {x: 0.97258705, y: 1.4314681, z: 0.055077408}
+  m_Center: {x: 0.006779939, y: 0.011746705, z: -0.0036720093}
 --- !u!54 &4740046385868407358
 Rigidbody:
   m_ObjectHideFlags: 0
