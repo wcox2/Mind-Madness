@@ -63,27 +63,6 @@ public class PlayerMovement : MonoBehaviour {
             sprite.transform.Rotate(0, 180, 0);
         }
 
-        // // Left Rotate
-        // if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-        //     Quaternion startRotation = Camera.main.transform.rotation;
-        //     Quaternion endRotation = startRotation *= Quaternion.Euler(0,90,0);
-        //     float rotateSpeed = 5.0f;
-        //     Quaternion slowRotateLeft = Quaternion.Lerp(startRotation, endRotation, rotateSpeed);
-        //     //transform.rotation = slowRotateLeft;
-        //     transform.Rotate(0, -speed * Time.deltaTime, 0);
-        // }
-
-        // // Right Rotate
-        // if (Input.GetKeyDown(KeyCode.RightArrow)) {
-        //     Quaternion startRotation = Camera.main.transform.rotation;
-        //     Quaternion endRotation = startRotation *= Quaternion.Euler(0,-90,0);
-        //     float rotateSpeed = 5.0f;
-        //     Quaternion slowRotateLeft = Quaternion.Lerp(startRotation, endRotation, rotateSpeed);
-        //     //transform.rotation = slowRotateLeft;
-        //     transform.Rotate(0, -speed * Time.deltaTime, 0);
-        // }
-
-
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
     }
 
@@ -129,9 +108,9 @@ public class PlayerMovement : MonoBehaviour {
                                         dashSpeed * Mathf.Sin(this.transform.eulerAngles.y / 180 * pi));
         }
         yield return new WaitForSecondsRealtime(dashTime/3);
-        _rb.drag = 10;
+        _rb.drag = 5;
         yield return new WaitForSecondsRealtime(dashTime/3);
-        _rb.drag = 20;
+        _rb.drag = 30;
         yield return new WaitForSecondsRealtime(dashTime/3);
         _rb.drag = 1;
         isDashing = false;
@@ -140,7 +119,7 @@ public class PlayerMovement : MonoBehaviour {
         canDash = true;
     }
 
-    void freezePlayer(){
+    void freezePlayer() {
         isFrozen = true;
         _rb.isKinematic = true;
     }
