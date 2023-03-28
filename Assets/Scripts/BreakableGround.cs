@@ -8,6 +8,7 @@ public class BreakableGround : MonoBehaviour {
     public GameObject sprite;
     public GameObject player;
     private PlayerMovement playerScript;
+    public ParticleSystem blockDestroyParticle;
 
 
 
@@ -24,6 +25,7 @@ public class BreakableGround : MonoBehaviour {
 
     void OnCollisionEnter(Collision col) {
         if ((col.gameObject.tag == "Player") && (playerScript.isSlamming)) {
+            Instantiate(blockDestroyParticle.gameObject, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
