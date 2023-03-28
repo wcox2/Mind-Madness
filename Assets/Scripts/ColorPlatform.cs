@@ -11,7 +11,7 @@ public class ColorPlatform : MonoBehaviour {
         this.GetComponent<Renderer>().material.color = c;
     }
 
-    // Update is called once per frame
+
     void Update() {
 
     }
@@ -25,7 +25,6 @@ public class ColorPlatform : MonoBehaviour {
             Color c = this.GetComponent<Renderer>().material.color;
             c.a = f;
             this.GetComponent<Renderer>().material.color = c;
-            Debug.Log(c.a);
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
     }
