@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8292264743921253729}
   m_Layer: 0
   m_Name: FezlikeSpriteSheet_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,6 +259,7 @@ MonoBehaviour:
   dashCooldown: 0.5
   slamForce: 20
   slamFreezeTime: 1
+  isSlamming: 0
   maxJumps: 2
 --- !u!54 &8292264744371486769
 Rigidbody:
