@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1754623542, guid: a903499b9005d45928ff624ae85cc1cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.75, y: 0.9375}
@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 4740046385868407329}
   - component: {fileID: 4740046385868407359}
   - component: {fileID: 4740046385868407358}
+  - component: {fileID: 1917961119}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a464d6d1ba3ffb649bde31098b8138e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 4740046384175415125}
   movementSpeed: 5
   jumpVelocity: 5
   dashSpeed: 15
@@ -276,3 +277,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &1917961119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740046385868407333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfef0dabb06864af2a50de38cab46512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 4740046384175415125}
