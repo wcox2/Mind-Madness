@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool isDashing = false;
     public float slamForce = 20f;
     public float slamFreezeTime = 1f;
-    private bool isSlamming = false;
+    public bool isSlamming = false;
     private bool isFrozen = false;
     private float hInput;
     public int maxJumps = 2;
@@ -63,27 +63,6 @@ public class PlayerMovement : MonoBehaviour {
             sprite.transform.Rotate(0, 180, 0);
         }
 
-        // // Left Rotate
-        // if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-        //     Quaternion startRotation = Camera.main.transform.rotation;
-        //     Quaternion endRotation = startRotation *= Quaternion.Euler(0,90,0);
-        //     float rotateSpeed = 5.0f;
-        //     Quaternion slowRotateLeft = Quaternion.Lerp(startRotation, endRotation, rotateSpeed);
-        //     //transform.rotation = slowRotateLeft;
-        //     transform.Rotate(0, -speed * Time.deltaTime, 0);
-        // }
-
-        // // Right Rotate
-        // if (Input.GetKeyDown(KeyCode.RightArrow)) {
-        //     Quaternion startRotation = Camera.main.transform.rotation;
-        //     Quaternion endRotation = startRotation *= Quaternion.Euler(0,-90,0);
-        //     float rotateSpeed = 5.0f;
-        //     Quaternion slowRotateLeft = Quaternion.Lerp(startRotation, endRotation, rotateSpeed);
-        //     //transform.rotation = slowRotateLeft;
-        //     transform.Rotate(0, -speed * Time.deltaTime, 0);
-        // }
-
-
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
     }
 
@@ -95,6 +74,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
+        StartCoroutine(waitForSlam());
         if (collision.gameObject.CompareTag("Ground")) {
             currentJumps = maxJumps;
             isGrounded = true;
@@ -108,12 +88,18 @@ public class PlayerMovement : MonoBehaviour {
     }
     
     private IEnumerator freezePlayerTimer(float time) {
+        isSlamming = true;
         freezePlayer();
         yield return new WaitForSecondsRealtime(time);
         _rb.isKinematic = false;
         _rb.velocity = new Vector3(0, 0, 0);
         _rb.AddForce(Vector3.down * slamForce, ForceMode.Impulse);
         isFrozen = false;
+    }
+
+    private IEnumerator waitForSlam() {
+        yield return new WaitForEndOfFrame();
+        isSlamming = false;
     }
 
     private IEnumerator dash() {
@@ -129,9 +115,9 @@ public class PlayerMovement : MonoBehaviour {
                                         dashSpeed * Mathf.Sin(this.transform.eulerAngles.y / 180 * pi));
         }
         yield return new WaitForSecondsRealtime(dashTime/3);
-        _rb.drag = 10;
+        _rb.drag = 5;
         yield return new WaitForSecondsRealtime(dashTime/3);
-        _rb.drag = 20;
+        _rb.drag = 30;
         yield return new WaitForSecondsRealtime(dashTime/3);
         _rb.drag = 1;
         isDashing = false;
@@ -140,7 +126,7 @@ public class PlayerMovement : MonoBehaviour {
         canDash = true;
     }
 
-    void freezePlayer(){
+    void freezePlayer() {
         isFrozen = true;
         _rb.isKinematic = true;
     }
