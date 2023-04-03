@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     enum playerAction {jump};
     private bool isGrounded = true;
     private bool isFacingRight = true;
+    public GameObject mySpawnPoint;
 
 
     // Start is called before the first frame update
@@ -78,6 +79,10 @@ public class PlayerMovement : MonoBehaviour {
         if (collision.gameObject.CompareTag("Ground")) {
             currentJumps = maxJumps;
             isGrounded = true;
+        }
+
+        if(collision.gameObject.tag == "FloorLimit"){
+            gameObject.transform.position = mySpawnPoint.transform.position;
         }
     }
 
