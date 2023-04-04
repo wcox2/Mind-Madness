@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour {
     private bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
-    public Animator animator;
-
+    //public Animator animator;
+    //public AnimationScript animationScript;
 
     // Start is called before the first frame update
     void Start() {
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour {
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
 
         //Animation
-        animator.SetFloat("Speed", Mathf.Abs(hInput));
+        //animator.SetFloat("Speed", Mathf.Abs(hInput));
     }
 
 
