@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 122443382}
   - component: {fileID: 122443384}
   - component: {fileID: 122443383}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &412633620
 GameObject:
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 412633621}
   - component: {fileID: 412633623}
   - component: {fileID: 412633622}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 1139127483}
   - component: {fileID: 1139127482}
   - component: {fileID: 1139127481}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_HighlightedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 0.6117647}
     m_PressedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
-    m_SelectedColor: {r: 1, g: 0.3529412, b: 0.7411765, a: 1}
+    m_SelectedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 1181056189}
   - component: {fileID: 1181056188}
   - component: {fileID: 1181056187}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_HighlightedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 0.6117647}
     m_PressedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
-    m_SelectedColor: {r: 1, g: 0.3537736, b: 0.74030143, a: 1}
+    m_SelectedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -825,7 +825,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485301569
 GameObject:
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 1485301570}
   - component: {fileID: 1485301572}
   - component: {fileID: 1485301571}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 1522716366}
   - component: {fileID: 1522716365}
   - component: {fileID: 1522716364}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_HighlightedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 0.6117647}
     m_PressedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
-    m_SelectedColor: {r: 1, g: 0.3529412, b: 0.7411765, a: 1}
+    m_SelectedColor: {r: 0.94509804, g: 0.5254902, b: 0.7764706, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1106,7 +1106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1588075112}
   - component: {fileID: 1588075113}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1127,7 @@ Transform:
   m_Children:
   - {fileID: 1703083875}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1588075113
 MonoBehaviour:
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 1703083878}
   - component: {fileID: 1703083877}
   - component: {fileID: 1703083876}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1245,6 +1245,83 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &1772502685
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1579038904250987878, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246274623225127744, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246274623225127744, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246274623225127744, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053471940532155970, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 515
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 274.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555693634665646180, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335720654759580691, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65ce2250d9a1b43fc96c9873bccea6ae, type: 3}
 --- !u!1 &2070391115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,7 +1333,7 @@ GameObject:
   - component: {fileID: 2070391116}
   - component: {fileID: 2070391118}
   - component: {fileID: 2070391117}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,5 +1480,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
