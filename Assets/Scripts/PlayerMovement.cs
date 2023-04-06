@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
     //public Animator animator;
-
+    //public AnimationScript animationScript;
 
     // Start is called before the first frame update
     void Start() {
