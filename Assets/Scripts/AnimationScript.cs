@@ -15,8 +15,8 @@ public class AnimationScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateSpeed(float newSpeed)
     {
-        animator.SetFloat("Speed", Mathf.Abs(hInput));
+        animator.SetFloat("Speed", Mathf.Abs(newSpeed));
     }
 }
