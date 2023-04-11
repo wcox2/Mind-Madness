@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour {
 
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
 
-        animationScript.UpdateSpeed(hInput);
+        // animationScript.UpdateSpeed(hInput);
     }
 
 
