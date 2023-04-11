@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ColorCollectScript : MonoBehaviour {
-    public GameObject player;
     public GameObject platform;
     private Collider playerCollider;
     private Collider colorCollider;
@@ -16,7 +15,7 @@ public class ColorCollectScript : MonoBehaviour {
         // playerLight = player.transform.GetChild(2).gameObject;
         spriteRenderer = sprite.GetComponent<SpriteRenderer>();
         colorCollider = GetComponent<Collider>();
-        playerCollider = player.GetComponent<Collider>();
+        playerCollider = sprite.GetComponent<Collider>();
     }
 
     void Update() {
