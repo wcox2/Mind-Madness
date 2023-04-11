@@ -377,19 +377,23 @@ PrefabInstance:
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1690349001}
+      objectReference: {fileID: 0}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 1690349001}
+      objectReference: {fileID: 0}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platform
       value: 
       objectReference: {fileID: 1775236690}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: colorSelect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: playerLight
       value: 
-      objectReference: {fileID: 487099395}
+      objectReference: {fileID: 0}
     - target: {fileID: 4810256962415252905, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1176,11 +1180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
---- !u!108 &487099395 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 487099395, guid: 231672fa430695847838801a4fe75f17, type: 3}
-  m_PrefabInstance: {fileID: 1698722689}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &670469804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2583,6 +2582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4740046385868407329, guid: 231672fa430695847838801a4fe75f17, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4740046385868407330, guid: 231672fa430695847838801a4fe75f17, type: 3}
       propertyPath: m_RootOrder
       value: 0

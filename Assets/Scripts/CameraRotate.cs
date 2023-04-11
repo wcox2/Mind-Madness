@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
 {
+    public GameObject player;
     public GameObject targetObject;
     private float targetAngle = 0;
     const float rotationAmount = 1.5f;
       
-    // Update is called once per frame
+    
+    void Start() {
+        player = GameObject.FindWithTag("Player");
+        targetObject = player.transform.GetChild(0).gameObject;
+    }
+
     void Update()
     {
       
@@ -25,20 +31,15 @@ public class CameraRotate : MonoBehaviour
          }
      }
       
-     protected void Rotate()
-     {
-
-         
-         if (targetAngle>0)
-         {
-             transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
-             targetAngle -= rotationAmount;
-         }
-         else if(targetAngle <0)
-         {
-             transform.RotateAround(targetObject.transform.position, Vector3.up, rotationAmount);
-             targetAngle += rotationAmount;
-         }
-      
-     }
+    protected void Rotate() {
+        if (targetAngle>0) {
+            transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
+            targetAngle -= rotationAmount;
+        }
+        else if(targetAngle < 0) {
+            transform.RotateAround(targetObject.transform.position, Vector3.up, rotationAmount);
+            targetAngle += rotationAmount;
+        }
+    
+    }
 }
