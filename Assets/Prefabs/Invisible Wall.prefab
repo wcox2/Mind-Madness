@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 925094782084900392}
   - component: {fileID: 925094782084900388}
   - component: {fileID: 925094782084900389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 925094782788466664}
   - component: {fileID: 925094782788466665}
   - component: {fileID: 925094782788466661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 925094782788466666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 2, z: 1}
-  m_LocalScale: {x: 1, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 10, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 925094782084900392}
