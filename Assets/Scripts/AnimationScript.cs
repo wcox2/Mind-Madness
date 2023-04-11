@@ -18,5 +18,6 @@ public class AnimationScript : MonoBehaviour
     public void UpdateSpeed(float newSpeed)
     {
         animator.SetFloat("Speed", Mathf.Abs(newSpeed));
+
     }
 }
