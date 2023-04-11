@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Screens/LevelSelector.unity
     guid: 593de59aa86b9424b97df99c7bd28835
   - enabled: 1
-    path: Assets/Scenes/PaulScene.unity
+    path: Assets/Scenes/TutorialLevel.unity
     guid: e09b7b315a76b0e4b91b7cc335003640
   m_configObjects: {}
