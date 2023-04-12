@@ -11,6 +11,9 @@ public class ColorCollectScript : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     public GameObject player;
     public int colorSelect = 0;
+    public GameObject thisObject;
+    public float fadeSpeed = 0.01f;
+    public Light light;
     
 
     void Start() {
@@ -20,6 +23,8 @@ public class ColorCollectScript : MonoBehaviour {
         colorCollider = GetComponent<Collider>();
         playerCollider = sprite.GetComponent<Collider>();
         playerLight = player.transform.GetChild(2).GetComponent<Light>();
+        thisObject = this.gameObject;
+        light = this.transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update() {
@@ -32,8 +37,20 @@ public class ColorCollectScript : MonoBehaviour {
             spriteRenderer.color = new Color(1f, 0.45f, 0.45f, 1f);
         }
         if (col.tag == "Player") {
+            StartCoroutine(FadeOutObject());
             platform.SetActive(true);
-            Destroy(gameObject);
         }
+    }
+
+    public IEnumerator FadeOutObject() {
+        for (float f = fadeSpeed; f <= 1.001; f += fadeSpeed) {
+            Color color = this.GetComponent<Renderer>().material.color;
+            light.intensity = 1-f;
+            color.a = 1-f;
+            Debug.Log(color.a);
+            this.GetComponent<Renderer>().material.color = color;
+            yield return new WaitForSecondsRealtime(fadeSpeed);
+        }
+        thisObject.SetActive(false);
     }
 }
