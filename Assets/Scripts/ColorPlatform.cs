@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class ColorPlatform : MonoBehaviour {
     public float fadeSpeed = 0.05f;
+    public Light light;
 
     void Start() {
         Color c = this.GetComponent<Renderer>().material.color;
         c.a = 0f;
         this.GetComponent<Renderer>().material.color = c;
+        // light = this.transform.GetChild(0).GetComponent<Light>();
+        // light.intensity = 0;
     }
 
 
@@ -17,14 +20,17 @@ public class ColorPlatform : MonoBehaviour {
     }
 
     void OnEnable() {
+        light = this.transform.GetChild(0).GetComponent<Light>();
+        light.intensity = 0;
         StartCoroutine(FadeInObject());
     }
 
     public IEnumerator FadeInObject() {
-        for (float f = fadeSpeed; f <= 1.001; f += fadeSpeed) {
-            Color c = this.GetComponent<Renderer>().material.color;
-            c.a = f;
-            this.GetComponent<Renderer>().material.color = c;
+        for (float f = 0; f <= 1.001; f += fadeSpeed) {
+            Color color = this.GetComponent<Renderer>().material.color;
+            color.a = f;
+            light.intensity = f;
+            this.GetComponent<Renderer>().material.color = color;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
     }

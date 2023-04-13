@@ -26,10 +26,11 @@ public class PlayerMovement : MonoBehaviour {
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
     //public Animator animator;
-    //public AnimationScript animationScript;
+    public AnimationScript animationScript;
 
     // Start is called before the first frame update
     void Start() {
+        sprite = this.transform.GetChild(0).gameObject;
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -67,8 +68,7 @@ public class PlayerMovement : MonoBehaviour {
 
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
 
-        //Animation
-        //animator.SetFloat("Speed", Mathf.Abs(hInput));
+        //animationScript.UpdateSpeed(hInput);
     }
 
 
