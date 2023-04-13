@@ -22,10 +22,10 @@ public class PlayerMovement : MonoBehaviour {
     private int currentJumps = 2;
     private Rigidbody _rb;
     enum playerAction {jump};
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
-    //public Animator animator;
+    public Animator animator;
     public AnimationScript animationScript;
 
     // Start is called before the first frame update
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
             currentJumps--;
             Debug.Log(currentJumps);
+            animationScript.UpdateIsJumping(true);
         }
 
         // Dash
@@ -68,7 +69,8 @@ public class PlayerMovement : MonoBehaviour {
 
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
 
-        //animationScript.UpdateSpeed(hInput);
+        animationScript.UpdateSpeed(hInput);
+        
     }
 
 
@@ -83,6 +85,8 @@ public class PlayerMovement : MonoBehaviour {
         if (collision.gameObject.CompareTag("Ground")) {
             currentJumps = maxJumps;
             isGrounded = true;
+
+            animationScript.UpdateIsGrounded(isGrounded);
         }
 
         if(collision.gameObject.tag == "FloorLimit"){
@@ -93,6 +97,7 @@ public class PlayerMovement : MonoBehaviour {
     void OnCollisionExit(Collision collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             isGrounded = false;
+            animationScript.UpdateIsGrounded(isGrounded);
         }
     }
     
