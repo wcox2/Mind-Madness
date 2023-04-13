@@ -13,6 +13,8 @@ public class BreakableGround : MonoBehaviour {
 
 
     void Start() {
+        player = GameObject.FindWithTag("Player");
+        sprite = player.transform.GetChild(0).gameObject;
         groundCollider = GetComponent<Collider>();
         spriteCollider = sprite.GetComponent<Collider>();
         playerScript = player.GetComponent<PlayerMovement>();
