@@ -3,15 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ColorCollectScript : MonoBehaviour {
-    public GameObject player;
     public GameObject platform;
     private Collider playerCollider;
     private Collider colorCollider;
+    public Light playerLight;
+    public GameObject sprite;
+    private SpriteRenderer spriteRenderer;
+    public GameObject player;
+    public int colorSelect = 0;
+    public GameObject thisObject;
+    public float fadeSpeed = 0.01f;
+    public Light light;
     
 
     void Start() {
+        player = GameObject.FindWithTag("Player");
+        sprite = player.transform.GetChild(0).gameObject;
+        spriteRenderer = sprite.GetComponent<SpriteRenderer>();
         colorCollider = GetComponent<Collider>();
-        playerCollider = player.GetComponent<Collider>();
+        playerCollider = sprite.GetComponent<Collider>();
+        playerLight = player.transform.GetChild(2).GetComponent<Light>();
+        thisObject = this.gameObject;
+        light = this.transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update() {
@@ -19,9 +32,25 @@ public class ColorCollectScript : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider col) {
-            if (col.tag == "Player") {
-                platform.SetActive(true);
-                Destroy(gameObject);
-            }
+        if (colorSelect == 1) {
+            playerLight.color = Color.red;
+            spriteRenderer.color = new Color(1f, 0.45f, 0.45f, 1f);
         }
+        if (col.tag == "Player") {
+            StartCoroutine(FadeOutObject());
+            platform.SetActive(true);
+        }
+    }
+
+    public IEnumerator FadeOutObject() {
+        for (float f = fadeSpeed; f <= 1.001; f += fadeSpeed) {
+            Color color = this.GetComponent<Renderer>().material.color;
+            light.intensity = 1-f;
+            color.a = 1-f;
+            Debug.Log(color.a);
+            this.GetComponent<Renderer>().material.color = color;
+            yield return new WaitForSecondsRealtime(fadeSpeed);
+        }
+        thisObject.SetActive(false);
+    }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class InvisibleWall : MonoBehaviour {
-
+    public GameObject player;
     public GameObject sprite;
     private float dist;
     private MeshRenderer MR;
@@ -10,9 +10,11 @@ public class InvisibleWall : MonoBehaviour {
     private Collider col;
     private Vector3 closestPoint;
     public GameObject child;
-    public int startDist = 6;
+    public int startDist = 4;
 
     void Start() {
+        player = GameObject.FindWithTag("Player");
+        sprite = player.transform.GetChild(0).gameObject;
         child = this.transform.GetChild(0).gameObject;
         MR = this.GetComponent<MeshRenderer>();
         material = this.GetComponent<MeshRenderer>().material;
