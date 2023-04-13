@@ -149,7 +149,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: IsSlamming
     m_Type: 4
@@ -157,7 +157,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: IsGrounded
+  - m_Name: New Bool
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -271,7 +271,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6615168476936599324}
-    m_Position: {x: 560, y: 60, z: 0}
+    m_Position: {x: 510, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4785637411514492170}
     m_Position: {x: 280, y: 250, z: 0}
