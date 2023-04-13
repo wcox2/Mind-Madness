@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class TutorialText : MonoBehaviour
 {
+    public GameObject player;
     public GameObject platform;
-    public GameObject text;
-    // Start is called before the first frame update
+    private Collider playerCollider;
+    private Collider colorCollider;
+
+
     void Start()
     {
-        if (platform.activeInHierarchy)
-        {
-            text.SetActive(true);
-            yield return new WaitForSecondsRealtime(4f);
-
-        }
-        
+        colorCollider = GetComponent<Collider>();
+        playerCollider = player.GetComponent<Collider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Player")
+        {
+            platform.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 }
