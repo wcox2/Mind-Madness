@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3x3 Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 455281943942145338, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7120482638147999538, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -210,11 +214,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 61909029569498358, guid: 64a4c869e3a344edd9df3adacf970e5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 61909029569498358, guid: 64a4c869e3a344edd9df3adacf970e5a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.68
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 61909029569498358, guid: 64a4c869e3a344edd9df3adacf970e5a, type: 3}
       propertyPath: m_LocalRotation.w

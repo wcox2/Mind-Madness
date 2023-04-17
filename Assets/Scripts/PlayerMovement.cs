@@ -81,25 +81,23 @@ public class PlayerMovement : MonoBehaviour {
         if (isSlamming) {
             StartCoroutine(waitForSlam());
         }
-        // if (collision.gameObject.CompareTag("Ground")) {
-        //     currentJumps = maxJumps;
-        //     isGrounded = true;
-        // }
+        if (collision.gameObject.CompareTag("Ground")) {  
+            Vector3 collisionNormal = collision.contacts[0].normal;
+            // Check if the collision normal is pointing up (i.e. the bottom of the player is touching the ground)
+            if (collisionNormal.y > 0.5f) {
+                currentJumps = maxJumps;
+                isGrounded = true;
+            }
+        }
 
         if(collision.gameObject.tag == "FloorLimit"){
             gameObject.transform.position = mySpawnPoint.transform.position;
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.tag == "Ground") {
-            currentJumps = maxJumps;
-            isGrounded = true;
-        }
-    }
 
-    void OnTriggerExit(Collider other) {
-        if (other.tag == "Ground") {
+    void OnCollisionExit(Collision collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
             isGrounded = false;
         }
     }
