@@ -11,7 +11,7 @@ public class ColorCollectScript : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     public GameObject player;
     public int colorSelect = 0;
-    public GameObject thisObject;
+    private GameObject thisObject;
     public float fadeSpeed = 0.01f;
     public Light light;
     
@@ -35,6 +35,11 @@ public class ColorCollectScript : MonoBehaviour {
         if (colorSelect == 1) {
             playerLight.color = Color.red;
             spriteRenderer.color = new Color(1f, 0.45f, 0.45f, 1f);
+        }
+        else if (colorSelect == 2) {
+            playerLight.color = Color.green;
+            spriteRenderer.color = Color.green;
+            //spriteRenderer.color = new Color(.5f, 1f, 0.45f, 1f);
         }
         if (col.tag == "Player") {
             StartCoroutine(FadeOutObject());
