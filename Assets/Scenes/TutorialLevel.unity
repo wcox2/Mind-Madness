@@ -1449,7 +1449,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 708394314}
-  - component: {fileID: 708394319}
   - component: {fileID: 708394318}
   - component: {fileID: 708394317}
   - component: {fileID: 708394316}
@@ -1509,7 +1508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press S while in the air to double jump
+  m_text: Press S while in the air to ground smash
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1611,18 +1610,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &708394319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708394313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &726367535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4026,7 +4013,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1604300277}
-  - component: {fileID: 1604300279}
   - component: {fileID: 1604300278}
   - component: {fileID: 1612890173}
   - component: {fileID: 1612890172}
@@ -4078,18 +4064,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1604300279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604300276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &1604300280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5404,7 +5378,6 @@ GameObject:
   - component: {fileID: 2008249295}
   - component: {fileID: 2008249297}
   - component: {fileID: 2008249296}
-  - component: {fileID: 2008249298}
   - component: {fileID: 2008249299}
   m_Layer: 5
   m_Name: Section 1 Text
@@ -5530,20 +5503,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008249294}
   m_CullTransparentMesh: 1
---- !u!114 &2008249298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008249294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6eb28633ea749dba10669a3dd400ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  platform: {fileID: 0}
 --- !u!95 &2008249299
 Animator:
   serializedVersion: 5
