@@ -19,10 +19,10 @@ public class PlayerMovement : MonoBehaviour {
     private bool isFrozen = false;
     private float hInput;
     public int maxJumps = 2;
-    private int currentJumps = 2;
+    public int currentJumps = 2;
     private Rigidbody _rb;
     enum playerAction {jump};
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
     //public Animator animator;
@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour {
             _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
             currentJumps--;
-            Debug.Log(currentJumps);
         }
 
         // Dash
@@ -79,19 +78,28 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
-        StartCoroutine(waitForSlam());
-        if (collision.gameObject.CompareTag("Ground")) {
-            currentJumps = maxJumps;
-            isGrounded = true;
+        if (isSlamming) {
+            StartCoroutine(waitForSlam());
         }
+        // if (collision.gameObject.CompareTag("Ground")) {
+        //     currentJumps = maxJumps;
+        //     isGrounded = true;
+        // }
 
         if(collision.gameObject.tag == "FloorLimit"){
             gameObject.transform.position = mySpawnPoint.transform.position;
         }
     }
 
-    void OnCollisionExit(Collision collision) {
-        if (collision.gameObject.CompareTag("Ground")) {
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Ground") {
+            currentJumps = maxJumps;
+            isGrounded = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (other.tag == "Ground") {
             isGrounded = false;
         }
     }
