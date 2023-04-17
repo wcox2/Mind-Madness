@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
-    //public Animator animator;
+
     public AnimationScript animationScript;
 
     // Start is called before the first frame update
@@ -44,16 +44,21 @@ public class PlayerMovement : MonoBehaviour {
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
             currentJumps--;
             Debug.Log(currentJumps);
+            animationScript.UpdateIsJumping(true);
+            //GetComponent<Animator>().Play("IsFalling", -1, 0f);
+
         }
 
         // Dash
-        if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
+        if (Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
             StartCoroutine(dash());
         }
 
         // Downslam
         if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
             StartCoroutine(freezePlayerTimer(slamFreezeTime));
+            animationScript.UpdateIsSlamming(true);
+            animationScript.UpdateIsJumping(false);
         }
 
         // Player Orientation Change
@@ -68,7 +73,7 @@ public class PlayerMovement : MonoBehaviour {
 
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
 
-        //animationScript.UpdateSpeed(hInput);
+        animationScript.UpdateSpeed(hInput);
     }
 
 
@@ -83,6 +88,10 @@ public class PlayerMovement : MonoBehaviour {
         if (collision.gameObject.CompareTag("Ground")) {
             currentJumps = maxJumps;
             isGrounded = true;
+
+            animationScript.UpdateIsJumping(false);
+            animationScript.UpdateIsSlamming(false);
+
         }
 
         if(collision.gameObject.tag == "FloorLimit"){
@@ -93,6 +102,7 @@ public class PlayerMovement : MonoBehaviour {
     void OnCollisionExit(Collision collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             isGrounded = false;
+            
         }
     }
     

@@ -307,6 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4740046385868407330}
   - component: {fileID: 4740046385868407329}
+  - component: {fileID: 7327482486610409895}
   - component: {fileID: 4740046385868407358}
   - component: {fileID: 1917961119}
   - component: {fileID: 1187322810}
@@ -360,7 +361,20 @@ MonoBehaviour:
   isSlamming: 0
   maxJumps: 2
   mySpawnPoint: {fileID: 0}
-  animationScript: {fileID: 0}
+  animationScript: {fileID: 7327482486610409895}
+--- !u!114 &7327482486610409895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740046385868407333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f932118d32a74df1bba1a18e9c56291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4740046384175415121}
 --- !u!54 &4740046385868407358
 Rigidbody:
   m_ObjectHideFlags: 0
