@@ -43,11 +43,10 @@ public class ColorCollectScript : MonoBehaviour {
     }
 
     public IEnumerator FadeOutObject() {
-        for (float f = fadeSpeed; f <= 1.001; f += fadeSpeed) {
+        for (float f = 0; f <= 0.5501; f += fadeSpeed) {
             Color color = this.GetComponent<Renderer>().material.color;
-            light.intensity = 1-f;
-            color.a = 1-f;
-            Debug.Log(color.a);
+            light.intensity = 0.55f-f;
+            color.a = 0.55f-f;
             this.GetComponent<Renderer>().material.color = color;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
