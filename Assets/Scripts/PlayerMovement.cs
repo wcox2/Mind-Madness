@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour {
             currentJumps--;
             Debug.Log(currentJumps);
             animationScript.UpdateIsJumping(true);
-            //GetComponent<Animator>().Play("IsFalling", -1, 0f);
 
         }
 
