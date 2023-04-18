@@ -5,7 +5,7 @@ using UnityEngine;
 public class TutorialText : MonoBehaviour
 {
     public GameObject player;
-    public GameObject platform;
+    public GameObject text;
     private Collider playerCollider;
     private Collider colorCollider;
 
@@ -16,16 +16,13 @@ public class TutorialText : MonoBehaviour
         playerCollider = player.GetComponent<Collider>();
     }
 
-    void Update()
-    {
 
-    }
 
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
         {
-            platform.SetActive(true);
+            text.SetActive(true);
             Destroy(gameObject);
         }
     }
