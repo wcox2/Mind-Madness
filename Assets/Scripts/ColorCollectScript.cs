@@ -36,17 +36,6 @@ public class ColorCollectScript : MonoBehaviour {
             playerLight.color = Color.red;
             spriteRenderer.color = new Color(1f, 0.45f, 0.45f, 1f);
         }
-<<<<<<< HEAD
-=======
-        else if (colorSelect == 2) {
-            playerLight.color = Color.green;
-            spriteRenderer.color = Color.green;
-        }
-        else if (colorSelect == 3) {
-            playerLight.color = Color.blue;
-            spriteRenderer.color = Color.blue;
-        }
->>>>>>> main
         if (col.tag == "Player") {
             StartCoroutine(FadeOutObject());
             platform.SetActive(true);
