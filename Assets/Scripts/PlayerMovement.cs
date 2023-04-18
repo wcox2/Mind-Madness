@@ -19,13 +19,13 @@ public class PlayerMovement : MonoBehaviour {
     private bool isFrozen = false;
     private float hInput;
     public int maxJumps = 2;
-    private int currentJumps = 2;
+    public int currentJumps = 2;
     private Rigidbody _rb;
     enum playerAction {jump};
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
-
+    //public Animator animator;
     public AnimationScript animationScript;
 
     // Start is called before the first frame update
@@ -43,21 +43,16 @@ public class PlayerMovement : MonoBehaviour {
             _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
             currentJumps--;
-            Debug.Log(currentJumps);
-            animationScript.UpdateIsJumping(true);
-
         }
 
         // Dash
-        if (Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
+        if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
             StartCoroutine(dash());
         }
 
         // Downslam
         if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
             StartCoroutine(freezePlayerTimer(slamFreezeTime));
-            animationScript.UpdateIsSlamming(true);
-            animationScript.UpdateIsJumping(false);
         }
 
         // Player Orientation Change
@@ -72,7 +67,7 @@ public class PlayerMovement : MonoBehaviour {
 
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
 
-        animationScript.UpdateSpeed(hInput);
+        //animationScript.UpdateSpeed(hInput);
     }
 
 
@@ -83,14 +78,16 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
-        StartCoroutine(waitForSlam());
-        if (collision.gameObject.CompareTag("Ground")) {
-            currentJumps = maxJumps;
-            isGrounded = true;
-
-            animationScript.UpdateIsJumping(false);
-            animationScript.UpdateIsSlamming(false);
-
+        if (isSlamming) {
+            StartCoroutine(waitForSlam());
+        }
+        if (collision.gameObject.CompareTag("Ground")) {  
+            Vector3 collisionNormal = collision.contacts[0].normal;
+            // Check if the collision normal is pointing up (i.e. the bottom of the player is touching the ground)
+            if (collisionNormal.y > 0.5f) {
+                currentJumps = maxJumps;
+                isGrounded = true;
+            }
         }
 
         if(collision.gameObject.tag == "FloorLimit"){
@@ -98,10 +95,10 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+
     void OnCollisionExit(Collision collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             isGrounded = false;
-            
         }
     }
     
