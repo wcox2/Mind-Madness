@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ColorCollectScript : MonoBehaviour {
-    public GameObject platform;
+    public GameObject platformAppear;
+    public GameObject platformDisappear;
     private Collider playerCollider;
     private Collider colorCollider;
     public Light playerLight;
@@ -13,7 +14,8 @@ public class ColorCollectScript : MonoBehaviour {
     public int colorSelect = 0;
     private GameObject thisObject;
     public float fadeSpeed = 0.01f;
-    public Light light;
+    public Light lightAppear;
+    public Light lightDisappear;
     
 
     void Start() {
@@ -24,7 +26,8 @@ public class ColorCollectScript : MonoBehaviour {
         playerCollider = sprite.GetComponent<Collider>();
         playerLight = player.transform.GetChild(2).GetComponent<Light>();
         thisObject = this.gameObject;
-        light = this.transform.GetChild(0).GetComponent<Light>();
+        lightAppear = this.transform.GetChild(0).GetComponent<Light>();
+        lightDisappear = platformDisappear.transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update() {
@@ -43,18 +46,29 @@ public class ColorCollectScript : MonoBehaviour {
         }
         if (col.tag == "Player") {
             StartCoroutine(FadeOutObject());
-            platform.SetActive(true);
+            platformAppear.SetActive(true);
         }
     }
 
     public IEnumerator FadeOutObject() {
+        Color colorCollect = this.GetComponent<Renderer>().material.color;
+        // if (platformDisappear != NULL) {
+            Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
+        // }
         for (float f = 0; f <= 0.5501; f += fadeSpeed) {
-            Color color = this.GetComponent<Renderer>().material.color;
-            light.intensity = 0.55f-f;
-            color.a = 0.55f-f;
-            this.GetComponent<Renderer>().material.color = color;
+            Debug.Log(colorCollect.a);
+            // Debug.Log(colorPlatform.a);
+            lightAppear.intensity = 0.55f-f;
+            colorCollect.a = 0.55f-f;
+            // if (platformDisappear != NULL) {
+                lightDisappear.intensity = 0.55f-f;
+                colorPlatform.a = 0.55f-f;
+            // }
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
+        // if (platformDisappear != NULL) {
+            platformDisappear.SetActive(false);
+        // }
         thisObject.SetActive(false);
     }
 }
