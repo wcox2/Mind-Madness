@@ -377,6 +377,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5712112507528859984, guid: 9e78e32aecd9544d9951c6a4c4ebd1d1, type: 3}
+      propertyPath: hasFormat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5712112507528859984, guid: 9e78e32aecd9544d9951c6a4c4ebd1d1, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1633112462}
@@ -488,7 +492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Hi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -515,7 +519,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
