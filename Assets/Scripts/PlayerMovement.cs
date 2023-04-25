@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
         sprite = this.transform.GetChild(0).gameObject;
         _rb = GetComponent<Rigidbody>();
+        Physics.gravity = new Vector3(0, -25f, 0);
     }
 
     // Update is called once per frame

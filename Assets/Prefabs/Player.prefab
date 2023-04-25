@@ -350,8 +350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  movementSpeed: 5
-  jumpVelocity: 6
+  movementSpeed: 6
+  jumpVelocity: 11
   dashSpeed: 15
   dashTime: 0.5
   dashCooldown: 0.5
