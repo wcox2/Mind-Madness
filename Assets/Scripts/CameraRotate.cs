@@ -18,19 +18,20 @@ public class CameraRotate : MonoBehaviour
     void Update()
     {
       
-         // Trigger functions if Rotate is requested
-         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-             targetAngle -= 90.0f;
-         } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-             targetAngle += 90.0f;
-         }
+        // Trigger functions if Rotate is requested
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            targetAngle -= 90.0f;
+        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            targetAngle += 90.0f;
+        }
       
-         if(targetAngle !=0)
-         {
-             Rotate();
-         }
+        if(targetAngle !=0)
+        {
+            Rotate();
+        }
      }
-      
+
+
     protected void Rotate() {
         if (targetAngle>0) {
             transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
@@ -42,4 +43,30 @@ public class CameraRotate : MonoBehaviour
         }
     
     }
+      
+    // protected void Rotate() {
+    //     float rotationSpeed = Mathf.Round(rotationAmount * Time.deltaTime);
+
+    //     if (targetAngle > 0) {
+    //         if (targetAngle - rotationSpeed < 0) {
+    //             transform.RotateAround(targetObject.transform.position, Vector3.up, -targetAngle);
+    //             targetAngle = 0;
+    //         }
+    //         else {
+    //             transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationSpeed);
+    //             targetAngle -= rotationSpeed;
+    //         }
+    //     }
+    //     else if(targetAngle < 0) {
+    //         if (targetAngle - rotationSpeed > 0) {
+    //             transform.RotateAround(targetObject.transform.position, Vector3.up, targetAngle);
+    //             targetAngle = 0;
+    //         }
+    //         else {
+    //             transform.RotateAround(targetObject.transform.position, Vector3.up, rotationSpeed);
+    //             targetAngle += rotationSpeed;
+    //         }
+    //     }
+    
+    // }
 }
