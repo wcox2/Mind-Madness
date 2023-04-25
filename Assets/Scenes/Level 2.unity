@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414726, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276797, g: 0.2158917, b: 0.29782546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1207,13 +1207,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0b48ef754adf34a81b494a1b6493fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 893335152}
+  platformAppear: {fileID: 893335152}
+  platformDisappear: {fileID: 1448630936}
   playerLight: {fileID: 555781409}
   sprite: {fileID: 1102704390}
   player: {fileID: 1180013210}
   colorSelect: 3
   fadeSpeed: 0.01
-  light: {fileID: 1791652014}
+  lightAppear: {fileID: 0}
+  lightDisappear: {fileID: 0}
 --- !u!135 &374312164
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1874,7 +1876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &893335153
 Transform:
   m_ObjectHideFlags: 0
@@ -3325,7 +3327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1448630937
 Transform:
   m_ObjectHideFlags: 0
@@ -3419,13 +3421,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0b48ef754adf34a81b494a1b6493fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 1778702592}
+  platformAppear: {fileID: 1778702592}
+  platformDisappear: {fileID: 2069303068}
   playerLight: {fileID: 555781409}
   sprite: {fileID: 1102704390}
   player: {fileID: 1180013210}
   colorSelect: 2
   fadeSpeed: 0.01
-  light: {fileID: 1165649905}
+  lightAppear: {fileID: 0}
+  lightDisappear: {fileID: 0}
 --- !u!135 &1490242164
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4251,7 +4255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1778702593
 Transform:
   m_ObjectHideFlags: 0
@@ -4502,13 +4506,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0b48ef754adf34a81b494a1b6493fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 1448630936}
+  platformAppear: {fileID: 1448630936}
+  platformDisappear: {fileID: 1778702592}
   playerLight: {fileID: 555781409}
   sprite: {fileID: 1102704390}
   player: {fileID: 1180013210}
   colorSelect: 1
   fadeSpeed: 0.01
-  light: {fileID: 1037735133}
+  lightAppear: {fileID: 0}
+  lightDisappear: {fileID: 0}
 --- !u!135 &1838925814
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4913,6 +4919,37 @@ Transform:
   - {fileID: 1773734930}
   m_Father: {fileID: 1778702593}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2069303068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069303069}
+  m_Layer: 0
+  m_Name: EmptyDisapear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2069303069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069303068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.77, y: 1.637831, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2083200756
 PrefabInstance:
