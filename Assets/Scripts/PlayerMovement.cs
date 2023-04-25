@@ -91,6 +91,8 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if(collision.gameObject.tag == "FloorLimit"){
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             gameObject.transform.position = mySpawnPoint.transform.position;
         }
 
