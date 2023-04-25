@@ -38,11 +38,11 @@ public class ColorCollectScript : MonoBehaviour {
         }
         else if (colorSelect == 2) {
             playerLight.color = Color.green;
-            spriteRenderer.color = Color.green;
+            spriteRenderer.color = new Color(0.45f, 1f, 0.45f, 1f);
         }
         else if (colorSelect == 3) {
             playerLight.color = Color.blue;
-            spriteRenderer.color = Color.blue;
+            spriteRenderer.color = new Color(0.45f, 0.45f, 1f, 1f);;
         }
         if (col.tag == "Player") {
             StartCoroutine(FadeOutObject());

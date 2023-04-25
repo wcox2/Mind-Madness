@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject mySpawnPoint;
     //public Animator animator;
     public AnimationScript animationScript;
+    private int orbsCollected = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -93,11 +94,23 @@ public class PlayerMovement : MonoBehaviour {
         if(collision.gameObject.tag == "FloorLimit"){
             gameObject.transform.position = mySpawnPoint.transform.position;
         }
+
+      
+        
+    }
+
+    void OnTriggerEnter(Collider other){
+        Debug.Log(other.gameObject.tag);
+        if(other.gameObject.tag == "ColorOrb"){
+            Debug.Log("here");
+            mySpawnPoint.transform.position = sprite.transform.position;
+        }
     }
 
 
     void OnCollisionExit(Collision collision) {
         if (collision.gameObject.CompareTag("Ground")) {
+            Debug.Log("left Ground");
             isGrounded = false;
         }
     }
