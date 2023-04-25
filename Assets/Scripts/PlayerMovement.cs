@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         hInput = Input.GetAxis("Horizontal") * movementSpeed;
-
         //animationScript.UpdateSpeed(hInput);
     }
 
@@ -145,11 +144,14 @@ public class PlayerMovement : MonoBehaviour {
         yield return new WaitForSecondsRealtime(dashTime/3);
         _rb.drag = 5;
         yield return new WaitForSecondsRealtime(dashTime/3);
-        _rb.drag = 30;
-        yield return new WaitForSecondsRealtime(dashTime/3);
-        _rb.drag = 1;
-        isDashing = false;
+        _rb.drag = 2;
+        _rb.drag = 15;
+        yield return new WaitForSecondsRealtime(0.0001f);
+        _rb.drag = 0;
         _rb.useGravity = true;
+        yield return new WaitForSecondsRealtime(dashTime/6);
+        _rb.velocity = new Vector3(0f, 0f, 0f);
+        isDashing = false;
         yield return new WaitForSecondsRealtime(dashCooldown);
         canDash = true;
     }

@@ -44,7 +44,7 @@ public class ColorPlatform : MonoBehaviour {
             light.intensity = 0.55f-f;
             colorCollect.a = 0.55f-f;
             // colorPlatform.a = 0.55f-f;
-            // this.GetComponent<Renderer>().material.color = color;
+            this.GetComponent<Renderer>().material.color = colorCollect;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
         thisObject.SetActive(false);

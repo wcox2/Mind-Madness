@@ -15,7 +15,7 @@ public class ColorCollectScript : MonoBehaviour {
     private GameObject thisObject;
     public float fadeSpeed = 0.01f;
     public Light lightAppear;
-    public Light lightDisappear;
+    // public Light lightDisappear;
     
 
     void Start() {
@@ -27,7 +27,6 @@ public class ColorCollectScript : MonoBehaviour {
         playerLight = player.transform.GetChild(2).GetComponent<Light>();
         thisObject = this.gameObject;
         lightAppear = this.transform.GetChild(0).GetComponent<Light>();
-        lightDisappear = platformDisappear.transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update() {
@@ -53,25 +52,41 @@ public class ColorCollectScript : MonoBehaviour {
         }
     }
 
+    // public IEnumerator FadeOutObject() {
+    //     Color colorCollect = this.GetComponent<Renderer>().material.color;
+    //     Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
+    //     for (float f = 0; f <= 0.5501; f += fadeSpeed) {
+    //         Debug.Log(colorCollect.a);
+    //         lightAppear.intensity = 0.6f-f;
+    //         colorCollect.a = 0.6f-f;
+    //         lightDisappear.intensity = 0.6f-f;
+    //         colorPlatform.a = 0.6f-f;
+    //         this.GetComponent<Renderer>().material.color = colorCollect;
+    //         platformDisappear.GetComponent<Renderer>().material.color = colorPlatform;
+    //         yield return new WaitForSecondsRealtime(fadeSpeed);
+    //     }
+    //     platformDisappear.SetActive(false);
+    //     thisObject.SetActive(false);
+    // }
+
     public IEnumerator FadeOutObject() {
-        Color colorCollect = this.GetComponent<Renderer>().material.color;
-        // if (platformDisappear != NULL) {
-            Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
-        // }
-        for (float f = 0; f <= 0.5501; f += fadeSpeed) {
-            Debug.Log(colorCollect.a);
-            // Debug.Log(colorPlatform.a);
-            lightAppear.intensity = 0.55f-f;
-            colorCollect.a = 0.55f-f;
-            // if (platformDisappear != NULL) {
-                lightDisappear.intensity = 0.55f-f;
-                colorPlatform.a = 0.55f-f;
-            // }
-            yield return new WaitForSecondsRealtime(fadeSpeed);
+    Color colorCollect = this.GetComponent<Renderer>().material.color;
+
+    for (float f = 0; f <= 0.5501; f += fadeSpeed) {
+        lightAppear.intensity = 0.6f-f;
+        colorCollect.a = 0.6f-f;
+        foreach (Renderer childRenderer in platformDisappear.GetComponentsInChildren<Renderer>()) {
+            Color childColor = childRenderer.material.color;
+            childColor.a = 0.6f-f;
+            childRenderer.material.color = childColor;
+            // lightDisappear = childRenderer.transform.GetChild(0).GetComponent<Light>();
+            // lightDisappear.intensity = 0.6f-f;
         }
-        // if (platformDisappear != NULL) {
-            platformDisappear.SetActive(false);
-        // }
-        thisObject.SetActive(false);
+        this.GetComponent<Renderer>().material.color = colorCollect;
+        yield return new WaitForSecondsRealtime(fadeSpeed);
+    }
+
+    platformDisappear.SetActive(false);
+    thisObject.SetActive(false);
     }
 }
