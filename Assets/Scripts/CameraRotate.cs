@@ -7,7 +7,7 @@ public class CameraRotate : MonoBehaviour
     public GameObject player;
     public GameObject targetObject;
     private float targetAngle = 0;
-    const float rotationAmount = 1.5f;
+    const float rotationAmount = 180f;
       
     
     void Start() {
@@ -32,41 +32,40 @@ public class CameraRotate : MonoBehaviour
      }
 
 
+    // protected void Rotate() {
+    //     if (targetAngle>0) {
+    //         transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
+    //         targetAngle -= rotationAmount;
+    //     }
+    //     else if(targetAngle < 0) {
+    //         transform.RotateAround(targetObject.transform.position, Vector3.up, rotationAmount);
+    //         targetAngle += rotationAmount;
+    //     }
+    // }
+      
     protected void Rotate() {
-        if (targetAngle>0) {
-            transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationAmount);
-            targetAngle -= rotationAmount;
+        float rotationSpeed = rotationAmount * Time.deltaTime;
+
+        if (targetAngle > 0) {
+            if (targetAngle - rotationSpeed < 0) {
+                transform.RotateAround(targetObject.transform.position, Vector3.up, -targetAngle);
+                targetAngle = 0;
+            }
+            else {
+                transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationSpeed);
+                targetAngle -= rotationSpeed;
+            }
         }
         else if(targetAngle < 0) {
-            transform.RotateAround(targetObject.transform.position, Vector3.up, rotationAmount);
-            targetAngle += rotationAmount;
+            if (targetAngle - rotationSpeed > 0) {
+                transform.RotateAround(targetObject.transform.position, Vector3.up, targetAngle);
+                targetAngle = 0;
+            }
+            else {
+                transform.RotateAround(targetObject.transform.position, Vector3.up, rotationSpeed);
+                targetAngle += rotationSpeed;
+            }
         }
     
     }
-      
-    // protected void Rotate() {
-    //     float rotationSpeed = Mathf.Round(rotationAmount * Time.deltaTime);
-
-    //     if (targetAngle > 0) {
-    //         if (targetAngle - rotationSpeed < 0) {
-    //             transform.RotateAround(targetObject.transform.position, Vector3.up, -targetAngle);
-    //             targetAngle = 0;
-    //         }
-    //         else {
-    //             transform.RotateAround(targetObject.transform.position, Vector3.up, -rotationSpeed);
-    //             targetAngle -= rotationSpeed;
-    //         }
-    //     }
-    //     else if(targetAngle < 0) {
-    //         if (targetAngle - rotationSpeed > 0) {
-    //             transform.RotateAround(targetObject.transform.position, Vector3.up, targetAngle);
-    //             targetAngle = 0;
-    //         }
-    //         else {
-    //             transform.RotateAround(targetObject.transform.position, Vector3.up, rotationSpeed);
-    //             targetAngle += rotationSpeed;
-    //         }
-    //     }
-    
-    // }
 }
