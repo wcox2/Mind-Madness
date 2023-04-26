@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
         sprite = this.transform.GetChild(0).gameObject;
         _rb = GetComponent<Rigidbody>();
+        Physics.gravity = new Vector3(0, -25f, 0);
     }
 
     // Update is called once per frame
@@ -78,15 +79,23 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
+        Vector3 collisionNormal = collision.contacts[0].normal;
         if (isSlamming) {
-            StartCoroutine(waitForSlam());
+            _rb.velocity = new Vector3(0f, -25f, 0f);
         }
-        if (collision.gameObject.CompareTag("Ground")) {  
-            Vector3 collisionNormal = collision.contacts[0].normal;
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("BreakableGround")) {
+            collisionNormal = collision.contacts[0].normal;
             // Check if the collision normal is pointing up (i.e. the bottom of the player is touching the ground)
             if (collisionNormal.y > 0.5f) {
                 currentJumps = maxJumps;
                 isGrounded = true;
+            }
+        }
+        if (!collision.gameObject.CompareTag("BreakableGround")) {
+            collisionNormal = collision.contacts[0].normal;
+            if (collisionNormal.y > 0.5f) {
+                isSlamming = false;
+                unfreezePlayer();
             }
         }
 
@@ -101,17 +110,14 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other){
-        Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag == "ColorOrb"){
-            Debug.Log("here");
             mySpawnPoint.transform.position = sprite.transform.position;
         }
     }
 
 
     void OnCollisionExit(Collision collision) {
-        if (collision.gameObject.CompareTag("Ground")) {
-            Debug.Log("left Ground");
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("BreakableGround")) {
             isGrounded = false;
         }
     }
@@ -119,11 +125,12 @@ public class PlayerMovement : MonoBehaviour {
     private IEnumerator freezePlayerTimer(float time) {
         isSlamming = true;
         freezePlayer();
+        _rb.isKinematic = true;
         yield return new WaitForSecondsRealtime(time);
         _rb.isKinematic = false;
         _rb.velocity = new Vector3(0, 0, 0);
-        _rb.AddForce(Vector3.down * slamForce, ForceMode.Impulse);
-        isFrozen = false;
+        // _rb.AddForce(Vector3.down * slamForce, ForceMode.Impulse);
+        _rb.velocity = new Vector3(0f, -25f, 0f);
     }
 
     private IEnumerator waitForSlam() {
@@ -160,6 +167,10 @@ public class PlayerMovement : MonoBehaviour {
 
     void freezePlayer() {
         isFrozen = true;
-        _rb.isKinematic = true;
+        _rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+    }
+    void unfreezePlayer() {
+        isFrozen = false;
+        _rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 }
