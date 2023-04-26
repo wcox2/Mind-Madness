@@ -34,12 +34,12 @@ public class ColorPlatform : MonoBehaviour {
         for (float f = 0; f <= 1.001; f += fadeSpeed) {
             Color color;
             foreach (Material material in materials) {
-            color = material.color;
-            color.a = f;
-            material.color = color;
+                color = material.color;
+                color.a = f;
+                material.color = color;
             }
             if (this.transform.childCount > 0) {
-                light.intensity = f;
+                this.transform.GetChild(0).GetComponent<Light>().intensity = f;
             }
             // this.GetComponent<Renderer>().material.color = color;
             yield return new WaitForSecondsRealtime(fadeSpeed);

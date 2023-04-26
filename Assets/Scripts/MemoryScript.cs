@@ -27,7 +27,6 @@ public class MemoryScript : MonoBehaviour
     }
 
     void OnTriggerEnter() {
-        Debug.Log("here");
         SceneManager.LoadScene("HomeScreen");
     }
 }

@@ -15,6 +15,7 @@ public class ColorCollectScript : MonoBehaviour {
     private GameObject thisObject;
     public float fadeSpeed = 0.01f;
     public Light lightAppear;
+    public GameObject allColorCollects;
     // public Light lightDisappear;
     
 
@@ -48,8 +49,18 @@ public class ColorCollectScript : MonoBehaviour {
         }
         if (col.tag == "Player") {
             StartCoroutine(FadeOutObject());
+            for (int i = 0; i < allColorCollects.transform.childCount; i++) {
+                GameObject child = allColorCollects.transform.GetChild(i).gameObject;
+                if (child.activeSelf == false) {
+                    child.SetActive(true);
+                }
+            }
             platformAppear.SetActive(true);
         }
+    }
+
+    void OnEnable() {
+        StartCoroutine(FadeInObject());
     }
 
     // public IEnumerator FadeOutObject() {
@@ -88,5 +99,22 @@ public class ColorCollectScript : MonoBehaviour {
 
     platformDisappear.SetActive(false);
     thisObject.SetActive(false);
+    }
+
+    public IEnumerator FadeInObject() {
+        Debug.Log("here");
+        Material[] materials = this.GetComponent<Renderer>().materials;
+        for (float f = 0; f <= 1.001; f += fadeSpeed) {
+            Color color;
+            foreach (Material material in materials) {
+                color = material.color;
+                color.a = f;
+                material.color = color;
+            }
+            if (this.transform.childCount > 0) {
+                this.transform.GetChild(0).GetComponent<Light>().intensity = f;
+            }
+            yield return new WaitForSecondsRealtime(fadeSpeed);
+        }
     }
 }
