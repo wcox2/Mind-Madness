@@ -8,6 +8,7 @@ TagManager:
   - FloorLimit
   - ColorOrb
   - BreakableGround
+  - Spikes
   layers:
   - Default
   - TransparentFX
