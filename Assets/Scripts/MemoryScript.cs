@@ -9,10 +9,18 @@ public class MemoryScript : MonoBehaviour
     public float speed = 1f; // Set the speed of the object's movement
     public float rotationSpeed = 1f; // Set the speed of the object's rotation
     private Vector3 startPos; // Store the object's initial position
+    public string sceneName;
+    
 
     void Start()
     {
         startPos = transform.position; // Set the object's initial position
+
+        
+        Scene scene  = SceneManager.GetActiveScene();
+        sceneName = scene.name;
+        Debug.Log(sceneName);
+
     }
 
 
@@ -27,6 +35,13 @@ public class MemoryScript : MonoBehaviour
     }
 
     void OnTriggerEnter() {
-        SceneManager.LoadScene("HomeScreen");
+        
+        /*if(sceneName == "TutorialLevel"){
+            SceneManager.LoadScene("HomeScreen");       
+        }
+        else if(sceneName == "Level 2"){
+            SceneManager.LoadScene("Patrick Scene");
+        }*/
+        
     }
 }
