@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PatrickSceneLevel.unity
     guid: 7613d241ccbeb344398ef0e1580db067
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: b3ca294f4eecd45739e3aad5006ebcf6
   m_configObjects: {}
