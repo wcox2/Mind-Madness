@@ -16,7 +16,6 @@ public class ColorCollectScript : MonoBehaviour {
     public float fadeSpeed = 0.01f;
     public Light lightAppear;
     public GameObject allColorCollects;
-    // public Light lightDisappear;
     
 
     void Start() {
@@ -63,25 +62,9 @@ public class ColorCollectScript : MonoBehaviour {
         StartCoroutine(FadeInObject());
     }
 
-    // public IEnumerator FadeOutObject() {
-    //     Color colorCollect = this.GetComponent<Renderer>().material.color;
-    //     Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
-    //     for (float f = 0; f <= 0.5501; f += fadeSpeed) {
-    //         Debug.Log(colorCollect.a);
-    //         lightAppear.intensity = 0.6f-f;
-    //         colorCollect.a = 0.6f-f;
-    //         lightDisappear.intensity = 0.6f-f;
-    //         colorPlatform.a = 0.6f-f;
-    //         this.GetComponent<Renderer>().material.color = colorCollect;
-    //         platformDisappear.GetComponent<Renderer>().material.color = colorPlatform;
-    //         yield return new WaitForSecondsRealtime(fadeSpeed);
-    //     }
-    //     platformDisappear.SetActive(false);
-    //     thisObject.SetActive(false);
-    // }
-
     public IEnumerator FadeOutObject() {
     Color colorCollect = this.GetComponent<Renderer>().material.color;
+
 
     for (float f = 0; f <= 0.5501; f += fadeSpeed) {
         lightAppear.intensity = 0.6f-f;
@@ -90,8 +73,6 @@ public class ColorCollectScript : MonoBehaviour {
             Color childColor = childRenderer.material.color;
             childColor.a = 0.6f-f;
             childRenderer.material.color = childColor;
-            // lightDisappear = childRenderer.transform.GetChild(0).GetComponent<Light>();
-            // lightDisappear.intensity = 0.6f-f;
         }
         this.GetComponent<Renderer>().material.color = colorCollect;
         yield return new WaitForSecondsRealtime(fadeSpeed);
@@ -102,7 +83,6 @@ public class ColorCollectScript : MonoBehaviour {
     }
 
     public IEnumerator FadeInObject() {
-        Debug.Log("here");
         Material[] materials = this.GetComponent<Renderer>().materials;
         for (float f = 0; f <= 1.001; f += fadeSpeed) {
             Color color;

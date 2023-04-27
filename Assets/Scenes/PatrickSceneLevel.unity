@@ -484,6 +484,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 475365306}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: allColorCollects
+      value: 
+      objectReference: {fileID: 303471212}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platformDisappear
       value: 
       objectReference: {fileID: 980392831}
@@ -742,6 +746,10 @@ PrefabInstance:
       propertyPath: platformAppear
       value: 
       objectReference: {fileID: 710786387}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: allColorCollects
+      value: 
+      objectReference: {fileID: 303471212}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platformDisappear
       value: 
@@ -2205,6 +2213,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 980392831}
     - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
+      propertyPath: allColorCollects
+      value: 
+      objectReference: {fileID: 303471212}
+    - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
       propertyPath: platformDisappear
       value: 
       objectReference: {fileID: 475365306}
@@ -2558,7 +2570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &980392832
 Transform:
   m_ObjectHideFlags: 0
