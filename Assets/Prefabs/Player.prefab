@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487099394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.089372635, y: 0.029999971, z: 0.9061725}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -350,8 +350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  movementSpeed: 5
-  jumpVelocity: 6
+  movementSpeed: 6
+  jumpVelocity: 11
   dashSpeed: 15
   dashTime: 0.5
   dashCooldown: 0.5
@@ -402,7 +402,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4740046385868407333}
   m_Material: {fileID: 13400000, guid: 9b9505fb098a4402bb82fee8826f39ed, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.08640286
   m_Height: 1.374391
   m_Direction: 1
@@ -416,7 +416,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4740046385868407333}
   m_Material: {fileID: 13400000, guid: 9b9505fb098a4402bb82fee8826f39ed, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.08998734
   m_Height: 1.4223632
   m_Direction: 1
@@ -430,7 +430,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4740046385868407333}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.24313663
   m_Height: 1.4521935
   m_Direction: 1
@@ -446,5 +446,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.95, y: 1.45, z: 0.15}
+  m_Size: {x: 0.85, y: 1.45, z: 0.15}
   m_Center: {x: 0, y: 0, z: 0}

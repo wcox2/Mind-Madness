@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - FloorLimit
+  - ColorOrb
+  - BreakableGround
+  - Spikes
   layers:
   - Default
   - TransparentFX
