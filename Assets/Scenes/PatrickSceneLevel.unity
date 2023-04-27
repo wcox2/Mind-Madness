@@ -1773,15 +1773,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812057447526245375, guid: 76273024a98f94d63ba7b5f64d739254, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3812057447526245375, guid: 76273024a98f94d63ba7b5f64d739254, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.43
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3812057447526245375, guid: 76273024a98f94d63ba7b5f64d739254, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.38
+      value: 17.75
       objectReference: {fileID: 0}
     - target: {fileID: 3812057447526245375, guid: 76273024a98f94d63ba7b5f64d739254, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2748,7 +2748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &980392832
 Transform:
   m_ObjectHideFlags: 0
@@ -5778,6 +5778,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4783567986055444065, guid: b15b05bad85808f4fa100e218549f670, type: 3}
+      propertyPath: nextScene
+      value: HomeScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 4783567986055444091, guid: b15b05bad85808f4fa100e218549f670, type: 3}
       propertyPath: m_Name
       value: Memory
