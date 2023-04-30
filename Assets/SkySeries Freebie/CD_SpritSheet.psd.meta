@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SkySeries Freebie/CD_SpritSheet.psd.meta
 guid: 29d9681ce59aa4114883f917aef3355c
+========
+guid: daa17f168eda44df99d36133600738e3
+>>>>>>>> parent of ee053a6 (Merge branch 'main' into animation):Assets/Textures/Home Screen - Mental Madness copy.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

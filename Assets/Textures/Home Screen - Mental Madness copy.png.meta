@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Textures/Home Screen - Mental Madness copy.png.meta
 guid: daa17f168eda44df99d36133600738e3
+========
+guid: 1df9c6c4c78df4a7587d7ec8917ee018
+>>>>>>>> parent of ee053a6 (Merge branch 'main' into animation):Assets/Textures/Home Screen - Mental Madness.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

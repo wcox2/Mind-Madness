@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Background.meta
+guid: 390194cb7fe1446088865f6d85bc2abb
+========
+guid: 62f2b7391c5f04fd9aed25b92090d842
+>>>>>>>> parent of ee053a6 (Merge branch 'main' into animation):Assets/Scenes/AnimationAndGraphics.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
