@@ -6296,13 +6296,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374312161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11, y: -9, z: 6}
+  m_LocalPosition: {x: -4.981901, y: -8.971238, z: 5.9534206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1791652013}
-  m_Father: {fileID: 1693814778}
-  m_RootOrder: 2
+  m_Father: {fileID: 1448630937}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &374312163
 MonoBehaviour:
@@ -34011,6 +34011,7 @@ Transform:
   - {fileID: 2083200757}
   - {fileID: 8290420}
   - {fileID: 798841572}
+  - {fileID: 374312162}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35781,13 +35782,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490242162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.018099189, y: 1.9712378, z: 0.0465796}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1165649906}
-  m_Father: {fileID: 1693814778}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1499337693
 Mesh:
@@ -39111,10 +39112,7 @@ Transform:
   m_LocalPosition: {x: 0.018099189, y: 0.028762206, z: -0.0465796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1490242167}
-  - {fileID: 1838925812}
-  - {fileID: 374312162}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41172,6 +41170,7 @@ Transform:
   m_Children:
   - {fileID: 1565249192}
   - {fileID: 1943557167}
+  - {fileID: 1838925812}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42377,8 +42376,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1037735132}
-  m_Father: {fileID: 1693814778}
-  m_RootOrder: 1
+  m_Father: {fileID: 1778702593}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1838925813
 MonoBehaviour:
