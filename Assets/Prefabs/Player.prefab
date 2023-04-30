@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487099394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.089372635, y: 0.029999971, z: 0.9061725}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 4740046384175415122}
   - component: {fileID: 4740046384175415123}
   - component: {fileID: 4740046384175415121}
-  - component: {fileID: 1498065942}
+  - component: {fileID: 1700987285}
   m_Layer: 0
   m_Name: Sprite_MainCharacter
   m_TagString: Player
@@ -253,7 +253,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1474726538, guid: 9a31c0c3cb4b648feaf012fe63dbd3bf, type: 3}
+  m_Sprite: {fileID: 1754623542, guid: a903499b9005d45928ff624ae85cc1cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -284,19 +284,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!65 &1498065942
-BoxCollider:
+--- !u!114 &1700987285
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740046384175415125}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.4359164, z: 0.2}
-  m_Center: {x: 0, y: 0.011470556, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20388953c2943c444817b511a7c2ef7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4740046385868407333
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,12 +306,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4740046385868407330}
   - component: {fileID: 4740046385868407329}
-  - component: {fileID: 7327482486610409895}
   - component: {fileID: 4740046385868407358}
   - component: {fileID: 1917961119}
-  - component: {fileID: 1187322810}
-  - component: {fileID: 1187322811}
-  - component: {fileID: 1187322812}
+  - component: {fileID: 1542641370}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -351,8 +347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  movementSpeed: 5
-  jumpVelocity: 6
+  movementSpeed: 6
+  jumpVelocity: 11
   dashSpeed: 15
   dashTime: 0.5
   dashCooldown: 0.5
@@ -360,21 +356,11 @@ MonoBehaviour:
   slamFreezeTime: 1
   isSlamming: 0
   maxJumps: 2
+  currentJumps: 2
+  isGrounded: 1
   mySpawnPoint: {fileID: 0}
-  animationScript: {fileID: 7327482486610409895}
---- !u!114 &7327482486610409895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740046385868407333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f932118d32a74df1bba1a18e9c56291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4740046384175415121}
+  animationScript: {fileID: 0}
+  GameController: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
 --- !u!54 &4740046385868407358
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -405,36 +391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   targetObject: {fileID: 4740046384175415125}
---- !u!136 &1187322810
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740046385868407333}
-  m_Material: {fileID: 13400000, guid: 9b9505fb098a4402bb82fee8826f39ed, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.08640286
-  m_Height: 1.374391
-  m_Direction: 1
-  m_Center: {x: 0.2697263, y: -0.006290853, z: 0}
---- !u!136 &1187322811
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4740046385868407333}
-  m_Material: {fileID: 13400000, guid: 9b9505fb098a4402bb82fee8826f39ed, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.08998734
-  m_Height: 1.4223632
-  m_Direction: 1
-  m_Center: {x: -0.25399345, y: -0.008341491, z: 0.07229477}
---- !u!136 &1187322812
-CapsuleCollider:
+  rotationAmount: 180
+--- !u!65 &1542641370
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -443,7 +402,6 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.24313663
-  m_Height: 1.4521935
-  m_Direction: 1
-  m_Center: {x: -0.0068766624, y: -0.043241143, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 1.45, z: 0.25}
+  m_Center: {x: 0, y: 0, z: 0}
