@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1193697115050538905}
   - component: {fileID: 8292929007506875180}
   - component: {fileID: 667206734470149753}
-  - component: {fileID: 1224676638345246353}
   m_Layer: 0
   m_Name: T2_PlatformBrain
   m_TagString: Ground
@@ -64,10 +63,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e30ddb369357b8747a1e81cf7f61af75, type: 2}
-  - {fileID: 2100000, guid: 1fefe72737354334cb109d7833d3cd6c, type: 2}
-  - {fileID: 2100000, guid: 07e373332a336c343913ad90f6f40a45, type: 2}
-  - {fileID: 2100000, guid: dec908f2965ce7540978c2dd25579ffb, type: 2}
+  - {fileID: 4874126678125670354, guid: 418bf4c97b51c4520961964672e6fc99, type: 3}
+  - {fileID: -6478536213147159724, guid: 418bf4c97b51c4520961964672e6fc99, type: 3}
+  - {fileID: -3846018093981099296, guid: 418bf4c97b51c4520961964672e6fc99, type: 3}
+  - {fileID: -6922793697723135513, guid: 418bf4c97b51c4520961964672e6fc99, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,17 +117,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.020000005, z: 0.020000005}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1224676638345246353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833202505550747212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 596ed68aa333a4d4dbd6f069696696e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeSpeed: 0.01
-  light: {fileID: 0}

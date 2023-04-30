@@ -15,7 +15,7 @@ public class ColorCollectScript : MonoBehaviour {
     private GameObject thisObject;
     public float fadeSpeed = 0.01f;
     public Light lightAppear;
-    public GameObject allColorCollects;
+    public Light lightDisappear;
     
 
     void Start() {
@@ -27,6 +27,7 @@ public class ColorCollectScript : MonoBehaviour {
         playerLight = player.transform.GetChild(2).GetComponent<Light>();
         thisObject = this.gameObject;
         lightAppear = this.transform.GetChild(0).GetComponent<Light>();
+        lightDisappear = platformDisappear.transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update() {
@@ -40,61 +41,37 @@ public class ColorCollectScript : MonoBehaviour {
         }
         else if (colorSelect == 2) {
             playerLight.color = Color.green;
-            spriteRenderer.color = new Color(0.45f, 1f, 0.45f, 1f);
+            spriteRenderer.color = Color.green;
         }
         else if (colorSelect == 3) {
             playerLight.color = Color.blue;
-            spriteRenderer.color = new Color(0.45f, 0.45f, 1f, 1f);;
+            spriteRenderer.color = Color.blue;
         }
         if (col.tag == "Player") {
             StartCoroutine(FadeOutObject());
-            for (int i = 0; i < allColorCollects.transform.childCount; i++) {
-                GameObject child = allColorCollects.transform.GetChild(i).gameObject;
-                if (child.activeSelf == false) {
-                    child.SetActive(true);
-                }
-            }
             platformAppear.SetActive(true);
         }
     }
 
-    void OnEnable() {
-        StartCoroutine(FadeInObject());
-    }
-
     public IEnumerator FadeOutObject() {
-    Color colorCollect = this.GetComponent<Renderer>().material.color;
-
-
-    for (float f = 0; f <= 0.5501; f += fadeSpeed) {
-        lightAppear.intensity = 0.6f-f;
-        colorCollect.a = 0.6f-f;
-        foreach (Renderer childRenderer in platformDisappear.GetComponentsInChildren<Renderer>()) {
-            Color childColor = childRenderer.material.color;
-            childColor.a = 0.6f-f;
-            childRenderer.material.color = childColor;
-        }
-        this.GetComponent<Renderer>().material.color = colorCollect;
-        yield return new WaitForSecondsRealtime(fadeSpeed);
-    }
-
-    platformDisappear.SetActive(false);
-    thisObject.SetActive(false);
-    }
-
-    public IEnumerator FadeInObject() {
-        Material[] materials = this.GetComponent<Renderer>().materials;
-        for (float f = 0; f <= 1.001; f += fadeSpeed) {
-            Color color;
-            foreach (Material material in materials) {
-                color = material.color;
-                color.a = f;
-                material.color = color;
-            }
-            if (this.transform.childCount > 0) {
-                this.transform.GetChild(0).GetComponent<Light>().intensity = f;
-            }
+        Color colorCollect = this.GetComponent<Renderer>().material.color;
+        // if (platformDisappear != NULL) {
+            Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
+        // }
+        for (float f = 0; f <= 0.5501; f += fadeSpeed) {
+            Debug.Log(colorCollect.a);
+            // Debug.Log(colorPlatform.a);
+            lightAppear.intensity = 0.55f-f;
+            colorCollect.a = 0.55f-f;
+            // if (platformDisappear != NULL) {
+                lightDisappear.intensity = 0.55f-f;
+                colorPlatform.a = 0.55f-f;
+            // }
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
+        // if (platformDisappear != NULL) {
+            platformDisappear.SetActive(false);
+        // }
+        thisObject.SetActive(false);
     }
 }
