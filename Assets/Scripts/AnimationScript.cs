@@ -20,4 +20,15 @@ public class AnimationScript : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(newSpeed));
 
     }
+
+    //Jummping Animation
+    public void UpdateIsJumping(bool jumping)
+    {
+        animator.SetBool("IsJumping", jumping);
+    }
+    //Slaming Animation
+    public void UpdateIsSlamming(bool slamming)
+    {
+        animator.SetBool("IsSlamming", slamming);
+    }
 }
