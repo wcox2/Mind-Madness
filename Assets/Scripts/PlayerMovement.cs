@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour {
     //public Animator animator;
     public AnimationScript animationScript;
     private int orbsCollected = 0;
+    public GameController GameController;
 
     // Start is called before the first frame update
     void Start() {
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        //if (!isPaused) {
+        // if (!GameController.isPaused) {
             // Jump
             if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
                 _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
@@ -69,7 +70,7 @@ public class PlayerMovement : MonoBehaviour {
 
             hInput = Input.GetAxis("Horizontal") * movementSpeed;
             //animationScript.UpdateSpeed(hInput);
-        //}
+        // }
     }
 
     void FixedUpdate() {
