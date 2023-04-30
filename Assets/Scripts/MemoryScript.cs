@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MemoryScript : MonoBehaviour
 {
-    public string nextScene;
     public float amplitude = 1f; // Set the amplitude of the object's movement
     public float speed = 1f; // Set the speed of the object's movement
     public float rotationSpeed = 1f; // Set the speed of the object's rotation
     private Vector3 startPos; // Store the object's initial position
+    public GameObject EndOfLevel;
+    public GameObject UIHud;
     
 
     void Start()
@@ -30,6 +31,9 @@ public class MemoryScript : MonoBehaviour
     }
 
     void OnTriggerEnter() {
-        SceneManager.LoadScene(nextScene);
+        // SceneManager.LoadScene(nextScene);
+        Time.timeScale = 0;
+        EndOfLevel.SetActive(true);
+        UIHud.SetActive(false); 
     }
 }
