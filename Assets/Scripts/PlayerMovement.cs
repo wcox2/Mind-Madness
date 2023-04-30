@@ -39,38 +39,38 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        if (!isPaused) {
+            // Jump
+            if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
+                _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+                _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+                currentJumps--;
+            }
 
-        // Jump
-        if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
-            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-            currentJumps--;
-        }
+            // Dash
+            if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
+                StartCoroutine(dash());
+            }
 
-        // Dash
-        if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
-            StartCoroutine(dash());
-        }
+            // Downslam
+            if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
+                StartCoroutine(freezePlayerTimer(slamFreezeTime));
+            }
 
-        // Downslam
-        if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
-            StartCoroutine(freezePlayerTimer(slamFreezeTime));
-        }
+            // Player Orientation Change
+            if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
+                isFacingRight = true;
+                sprite.transform.Rotate(0, 180, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
+                isFacingRight = false;
+                sprite.transform.Rotate(0, 180, 0);
+            }
 
-        // Player Orientation Change
-        if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
-            isFacingRight = true;
-            sprite.transform.Rotate(0, 180, 0);
+            hInput = Input.GetAxis("Horizontal") * movementSpeed;
+            //animationScript.UpdateSpeed(hInput);
         }
-        if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
-            isFacingRight = false;
-            sprite.transform.Rotate(0, 180, 0);
-        }
-
-        hInput = Input.GetAxis("Horizontal") * movementSpeed;
-        //animationScript.UpdateSpeed(hInput);
     }
-
 
     void FixedUpdate() {
         if ((isFrozen == false) && (isDashing == false)) {
