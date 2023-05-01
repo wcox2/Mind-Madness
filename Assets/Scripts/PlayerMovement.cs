@@ -122,6 +122,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         if(other.gameObject.tag == "Spikes"){
             gameObject.transform.position = mySpawnPoint.transform.position;
+            numDeaths++;
         }
     }
 
