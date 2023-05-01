@@ -38238,6 +38238,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1627509359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7023148365328638936, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+  m_PrefabInstance: {fileID: 900601417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1630181733
 Mesh:
   m_ObjectHideFlags: 0
@@ -44491,6 +44496,10 @@ PrefabInstance:
       propertyPath: numDeaths
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 1627509359}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
 --- !u!114 &1899135553 stripped

@@ -1112,6 +1112,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7120482638147999538, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
   m_PrefabInstance: {fileID: 893180226}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &198841782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7023148365328638936, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+  m_PrefabInstance: {fileID: 5778740567227465242}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &207350921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1727948910862633746, guid: 0bd8b5dc88c47446a82c28544edd428c, type: 3}
@@ -6543,6 +6548,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4740046385868407329, guid: 231672fa430695847838801a4fe75f17, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 198841782}
+    - target: {fileID: 4740046385868407329, guid: 231672fa430695847838801a4fe75f17, type: 3}
       propertyPath: mySpawnPoint
       value: 
       objectReference: {fileID: 1134459134}
@@ -7744,6 +7753,10 @@ PrefabInstance:
       propertyPath: nextLevel
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 198841782}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
 --- !u!1001 &5778740567227465242
@@ -7757,10 +7770,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 724041672}
-    - target: {fileID: 5778740566411335847, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5778740567428347804, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
