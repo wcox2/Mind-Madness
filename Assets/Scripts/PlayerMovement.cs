@@ -29,18 +29,23 @@ public class PlayerMovement : MonoBehaviour {
     public AnimationScript animationScript;
     private int orbsCollected = 0;
     public GameController GameController;
+    public int numDeaths;
+    private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start() {
         sprite = this.transform.GetChild(0).gameObject;
         _rb = GetComponent<Rigidbody>();
         Physics.gravity = new Vector3(0, -25f, 0);
+        numDeaths = 0;
     }
 
     // Update is called once per frame
     void Update() {
-
-        // if (!GameController.isPaused) {
+        if (isPaused && Input.GetKeyDown(KeyCode.Escape)) {
+            GameController.unpauseGame();
+        }
+        if (!isPaused) {
             // Jump
             if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
                 _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
@@ -70,7 +75,7 @@ public class PlayerMovement : MonoBehaviour {
 
             hInput = Input.GetAxis("Horizontal") * movementSpeed;
             //animationScript.UpdateSpeed(hInput);
-        // }
+        }
     }
 
     void FixedUpdate() {
@@ -104,6 +109,7 @@ public class PlayerMovement : MonoBehaviour {
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             gameObject.transform.position = mySpawnPoint.transform.position;
+            numDeaths++;
         }
 
       

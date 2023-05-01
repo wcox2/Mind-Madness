@@ -66,12 +66,12 @@ public class ColorCollectScript : MonoBehaviour {
     Color colorCollect = this.GetComponent<Renderer>().material.color;
 
 
-    for (float f = 0; f <= 0.5501; f += fadeSpeed) {
-        lightAppear.intensity = 0.6f-f;
-        colorCollect.a = 0.6f-f;
+    for (float f = 0; f <= 0.451; f += fadeSpeed) {
+        lightAppear.intensity = 0.45f-f;
+        colorCollect.a = 0.45f-f;
         foreach (Renderer childRenderer in platformDisappear.GetComponentsInChildren<Renderer>()) {
             Color childColor = childRenderer.material.color;
-            childColor.a = 0.6f-f;
+            childColor.a = 0.45f-f;
             childRenderer.material.color = childColor;
         }
         this.GetComponent<Renderer>().material.color = colorCollect;

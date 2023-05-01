@@ -11,6 +11,10 @@ public class MemoryScript : MonoBehaviour
     private Vector3 startPos; // Store the object's initial position
     public GameObject EndOfLevel;
     public GameObject UIHud;
+    public GameController GameController;
+    public Timer Timer;
+    public PlayerMovement PlayerMovement;
+
     
 
     void Start()
@@ -31,9 +35,27 @@ public class MemoryScript : MonoBehaviour
     }
 
     void OnTriggerEnter() {
-        // SceneManager.LoadScene(nextScene);
+        int stars = calculateStars();
         Time.timeScale = 0;
         EndOfLevel.SetActive(true);
+        EndOfLevel.transform.GetChild(4).gameObject.SetActive(true);
+        if (stars >= 2) {
+            EndOfLevel.transform.GetChild(5).gameObject.SetActive(true);
+        }
+        if (stars == 3) {
+            EndOfLevel.transform.GetChild(6).gameObject.SetActive(true);
+        }
         UIHud.SetActive(false); 
+    }
+
+    int calculateStars() {
+        int stars = 3;
+        if (PlayerMovement.numDeaths > 0) {
+            stars--;
+        }
+        if (Timer.currentTime > 30) {
+            stars--;
+        }
+        return stars;
     }
 }
