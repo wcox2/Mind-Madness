@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour {
     public bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
-    //public Animator animator;
     public AnimationScript animationScript;
     private int orbsCollected = 0;
     public GameController GameController;
@@ -53,6 +52,7 @@ public class PlayerMovement : MonoBehaviour {
                 _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
                 currentJumps--;
                 Debug.Log("Jump");
+                animationScript.UpdateIsJumping(true);
             }
 
             // Dash
@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour {
             // Downslam
             if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
                 StartCoroutine(freezePlayerTimer(slamFreezeTime));
+                animationScript.UpdateIsSlamming(true);
+                animationScript.UpdateIsJumping(false);
             }
 
             // Player Orientation Change
@@ -76,7 +78,7 @@ public class PlayerMovement : MonoBehaviour {
             }
 
             hInput = Input.GetAxis("Horizontal") * movementSpeed;
-            //animationScript.UpdateSpeed(hInput);
+            animationScript.UpdateSpeed(hInput);
 
             if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause
                 isPaused = true;
@@ -102,6 +104,8 @@ public class PlayerMovement : MonoBehaviour {
             if (collisionNormal.y > 0.5f) {
                 currentJumps = maxJumps;
                 isGrounded = true;
+                animationScript.UpdateIsJumping(false);
+                animationScript.UpdateIsSlamming(false);
             }
         }
         if (!collision.gameObject.CompareTag("BreakableGround")) {

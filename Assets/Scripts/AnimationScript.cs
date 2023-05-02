@@ -11,10 +11,12 @@ public class AnimationScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
+
+    //Running Animation
     public void UpdateSpeed(float newSpeed)
     {
         animator.SetFloat("Speed", Mathf.Abs(newSpeed));
@@ -26,9 +28,11 @@ public class AnimationScript : MonoBehaviour
     {
         animator.SetBool("IsJumping", jumping);
     }
+
     //Slaming Animation
     public void UpdateIsSlamming(bool slamming)
     {
         animator.SetBool("IsSlamming", slamming);
     }
+
 }
