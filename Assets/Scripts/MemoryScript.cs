@@ -46,6 +46,15 @@ public class MemoryScript : MonoBehaviour
             EndOfLevel.transform.GetChild(6).gameObject.SetActive(true);
         }
         UIHud.SetActive(false); 
+        if (SceneManager.GetActiveScene().name == "TutorialLevel") {
+            Global.numLevelsCompleted = 1;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level1") {
+            Global.numLevelsCompleted = 2;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2") {
+            Global.numLevelsCompleted = 3;
+        }
     }
 
     int calculateStars() {
