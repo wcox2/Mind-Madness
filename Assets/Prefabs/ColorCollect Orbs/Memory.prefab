@@ -223,6 +223,8 @@ MonoBehaviour:
   amplitude: 0.35
   speed: 2
   rotationSpeed: 50
+  EndOfLevel: {fileID: 0}
+  UIHud: {fileID: 0}
 --- !u!1001 &4021144702012292455
 PrefabInstance:
   m_ObjectHideFlags: 0

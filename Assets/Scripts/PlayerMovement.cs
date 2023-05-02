@@ -25,52 +25,72 @@ public class PlayerMovement : MonoBehaviour {
     public bool isGrounded = true;
     private bool isFacingRight = true;
     public GameObject mySpawnPoint;
-    //public Animator animator;
     public AnimationScript animationScript;
     private int orbsCollected = 0;
+    public GameController GameController;
+    public int numDeaths;
+    public bool isPaused = false;
 
     // Start is called before the first frame update
     void Start() {
         sprite = this.transform.GetChild(0).gameObject;
         _rb = GetComponent<Rigidbody>();
         Physics.gravity = new Vector3(0, -25f, 0);
+        numDeaths = 0;
     }
 
     // Update is called once per frame
     void Update() {
-
-
-        // Jump
-        if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
-            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-            _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-            currentJumps--;
+        if (isPaused && Input.GetKeyDown(KeyCode.Escape)) { // unpause
+            GameController.unpauseGame();
+            isPaused = false;
         }
+        else if (!isPaused) {
+            // Jump
+            if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
+                _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+                _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+                currentJumps--;
+                Debug.Log("Jump");
+                animationScript.UpdateIsJumping(true);
+                if(currentJumps == 0)
+                {
+                    animationScript.UpdateIsDoubleJump(true);
+                }
+            }
 
-        // Dash
-        if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
-            StartCoroutine(dash());
-        }
+            // Dash
+            if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
+                StartCoroutine(dash());
+            }
 
-        // Downslam
-        if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
-            StartCoroutine(freezePlayerTimer(slamFreezeTime));
-        }
+            // Downslam
+            if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
+                StartCoroutine(freezePlayerTimer(slamFreezeTime));
+                animationScript.UpdateIsSlamming(true);
+                animationScript.UpdateIsJumping(false);
+            }
 
-        // Player Orientation Change
-        if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
-            isFacingRight = true;
-            sprite.transform.Rotate(0, 180, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
-            isFacingRight = false;
-            sprite.transform.Rotate(0, 180, 0);
-        }
+            // Player Orientation Change
+            if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
+                isFacingRight = true;
+                sprite.transform.Rotate(0, 180, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
+                isFacingRight = false;
+                sprite.transform.Rotate(0, 180, 0);
+            }
 
-        hInput = Input.GetAxis("Horizontal") * movementSpeed;
-        //animationScript.UpdateSpeed(hInput);
+            hInput = Input.GetAxis("Horizontal") * movementSpeed;
+            
+            animationScript.UpdateSpeed(hInput);
+
+            if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause
+                isPaused = true;
+                GameController.pauseGame();
+            }
+        }
     }
-
 
     void FixedUpdate() {
         if ((isFrozen == false) && (isDashing == false)) {
@@ -89,6 +109,9 @@ public class PlayerMovement : MonoBehaviour {
             if (collisionNormal.y > 0.5f) {
                 currentJumps = maxJumps;
                 isGrounded = true;
+                animationScript.UpdateIsJumping(false);
+                animationScript.UpdateIsDoubleJump(false);
+                animationScript.UpdateIsSlamming(false);
             }
         }
         if (!collision.gameObject.CompareTag("BreakableGround")) {
@@ -103,6 +126,7 @@ public class PlayerMovement : MonoBehaviour {
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             gameObject.transform.position = mySpawnPoint.transform.position;
+            numDeaths++;
         }
 
       
@@ -115,6 +139,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         if(other.gameObject.tag == "Spikes"){
             gameObject.transform.position = mySpawnPoint.transform.position;
+            numDeaths++;
         }
     }
 

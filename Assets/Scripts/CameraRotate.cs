@@ -7,7 +7,7 @@ public class CameraRotate : MonoBehaviour
     public GameObject player;
     public GameObject targetObject;
     private float targetAngle = 0;
-    const float rotationAmount = 180f;
+    public float rotationAmount = 180f;
       
     
     void Start() {

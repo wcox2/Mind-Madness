@@ -9,10 +9,18 @@ public class MemoryScript : MonoBehaviour
     public float speed = 1f; // Set the speed of the object's movement
     public float rotationSpeed = 1f; // Set the speed of the object's rotation
     private Vector3 startPos; // Store the object's initial position
+    public GameObject EndOfLevel;
+    public GameObject UIHud;
+    public GameController GameController;
+    public Timer Timer;
+    public PlayerMovement PlayerMovement;
+
+    
 
     void Start()
     {
         startPos = transform.position; // Set the object's initial position
+
     }
 
 
@@ -27,6 +35,36 @@ public class MemoryScript : MonoBehaviour
     }
 
     void OnTriggerEnter() {
-        SceneManager.LoadScene("HomeScreen");
+        int stars = calculateStars();
+        Time.timeScale = 0;
+        EndOfLevel.SetActive(true);
+        EndOfLevel.transform.GetChild(4).gameObject.SetActive(true);
+        if (stars >= 2) {
+            EndOfLevel.transform.GetChild(5).gameObject.SetActive(true);
+        }
+        if (stars == 3) {
+            EndOfLevel.transform.GetChild(6).gameObject.SetActive(true);
+        }
+        UIHud.SetActive(false); 
+        if (SceneManager.GetActiveScene().name == "TutorialLevel") {
+            Global.numLevelsCompleted = 1;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level1") {
+            Global.numLevelsCompleted = 2;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level2") {
+            Global.numLevelsCompleted = 3;
+        }
+    }
+
+    int calculateStars() {
+        int stars = 3;
+        if (PlayerMovement.numDeaths > 0) {
+            stars--;
+        }
+        if (Timer.currentTime > 30) {
+            stars--;
+        }
+        return stars;
     }
 }
