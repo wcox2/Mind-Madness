@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour {
             }
 
             hInput = Input.GetAxis("Horizontal") * movementSpeed;
+            
             animationScript.UpdateSpeed(hInput);
 
             if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause

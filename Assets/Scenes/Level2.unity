@@ -24447,10 +24447,6 @@ PrefabInstance:
       propertyPath: mySpawnPoint
       value: 
       objectReference: {fileID: 1548974656}
-    - target: {fileID: 4740046385868407329, guid: 231672fa430695847838801a4fe75f17, type: 3}
-      propertyPath: animationScript
-      value: 
-      objectReference: {fileID: 1146942610}
     - target: {fileID: 4740046385868407330, guid: 231672fa430695847838801a4fe75f17, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -28572,7 +28568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1146942609
 Animator:
   serializedVersion: 5
