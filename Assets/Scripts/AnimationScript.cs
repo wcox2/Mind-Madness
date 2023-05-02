@@ -29,6 +29,10 @@ public class AnimationScript : MonoBehaviour
         animator.SetBool("IsJumping", jumping);
     }
 
+    public void UpdateIsDoubleJump(bool doublejump)
+    {
+        animator.SetBool("IsDoubleJump", doublejump);
+    }
     //Slaming Animation
     public void UpdateIsSlamming(bool slamming)
     {

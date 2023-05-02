@@ -53,6 +53,10 @@ public class PlayerMovement : MonoBehaviour {
                 currentJumps--;
                 Debug.Log("Jump");
                 animationScript.UpdateIsJumping(true);
+                if(currentJumps == 0)
+                {
+                    animationScript.UpdateIsDoubleJump(true);
+                }
             }
 
             // Dash
@@ -106,6 +110,7 @@ public class PlayerMovement : MonoBehaviour {
                 currentJumps = maxJumps;
                 isGrounded = true;
                 animationScript.UpdateIsJumping(false);
+                animationScript.UpdateIsDoubleJump(false);
                 animationScript.UpdateIsSlamming(false);
             }
         }
