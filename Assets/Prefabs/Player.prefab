@@ -151,7 +151,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 3000
   field of view: 58
   orthographic: 0
   orthographic size: 5
@@ -361,6 +361,7 @@ MonoBehaviour:
   mySpawnPoint: {fileID: 0}
   animationScript: {fileID: 0}
   GameController: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
+  numDeaths: 0
 --- !u!54 &4740046385868407358
 Rigidbody:
   m_ObjectHideFlags: 0
