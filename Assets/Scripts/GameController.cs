@@ -4,21 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
-    public string nextLevel;
     public bool isPaused = false;
-    // public GameObject UI;
-    // private GameObject pauseScreen;
+    public GameObject UI;
+    private GameObject pauseScreen;
 
 
     // Start is called before the first frame update
     void Start()
     {
         // pauseScreen = UI.transform.GetChild(4).gameObject;
+        // UI = GameObject.Find("UI");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (UI == null) {
+            UI = GameObject.Find("UI");
+        }
         if(Input.GetKeyDown(KeyCode.Escape) && (!isPaused)) {
             pauseGame();
         }
@@ -29,7 +32,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void loadNextScene() {
-        SceneManager.LoadScene(nextLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         unpauseGame();
     }
 
