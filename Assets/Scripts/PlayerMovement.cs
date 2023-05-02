@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     private int orbsCollected = 0;
     public GameController GameController;
     public int numDeaths;
-    private bool isPaused = false;
+    public bool isPaused = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -42,15 +42,17 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (isPaused && Input.GetKeyDown(KeyCode.Escape)) {
+        if (isPaused && Input.GetKeyDown(KeyCode.Escape)) { // unpause
             GameController.unpauseGame();
+            isPaused = false;
         }
-        if (!isPaused) {
+        else if (!isPaused) {
             // Jump
             if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
                 _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
                 _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
                 currentJumps--;
+                Debug.Log("Jump");
             }
 
             // Dash
@@ -75,6 +77,11 @@ public class PlayerMovement : MonoBehaviour {
 
             hInput = Input.GetAxis("Horizontal") * movementSpeed;
             //animationScript.UpdateSpeed(hInput);
+
+            if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause
+                isPaused = true;
+                GameController.pauseGame();
+            }
         }
     }
 
@@ -122,6 +129,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         if(other.gameObject.tag == "Spikes"){
             gameObject.transform.position = mySpawnPoint.transform.position;
+            numDeaths++;
         }
     }
 
