@@ -6937,10 +6937,72 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 468709320, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 468709320, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 468709320, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 757935444, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 757935444, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303434595, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303434595, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692298367, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_text
+      value: 'Collect the orb and use the arrows keys to rotate your screen.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692298367, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692298367, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940125712, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940125712, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020521628, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020521628, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5778740566307963375, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1004571609}
+    - target: {fileID: 5778740566411335847, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5778740567428347804, guid: b3c2dd5bed81e144da2708350754a4b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
