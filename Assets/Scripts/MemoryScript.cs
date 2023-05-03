@@ -64,6 +64,18 @@ public class MemoryScript : MonoBehaviour
                 Global.level2Stars = stars;
             }
         }
+        else if (SceneManager.GetActiveScene().name == "Level3") {
+            Global.numLevelsCompleted = 4;
+            if (Global.level2Stars < stars) {
+                Global.level2Stars = stars;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Level4") {
+            Global.numLevelsCompleted = 5;
+            if (Global.level2Stars < stars) {
+                Global.level2Stars = stars;
+            }
+        }
     }
 
     int calculateStars() {
@@ -71,8 +83,20 @@ public class MemoryScript : MonoBehaviour
         if (PlayerMovement.numDeaths > 0) {
             stars--;
         }
-        if (Timer.currentTime > 20) {
+        if (SceneManager.GetActiveScene().name == "Level4") {
+            if (Timer.currentTime > 60) {
             stars--;
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Level3") {
+            if (Timer.currentTime > 30) {
+            stars--;
+            }
+        }
+        else {
+            if (Timer.currentTime > 20) {
+                stars--;
+            }
         }
         return stars;
     }

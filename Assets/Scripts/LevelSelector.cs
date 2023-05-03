@@ -144,6 +144,18 @@ public class LevelSelector : MonoBehaviour {
         }
     }
 
+    public void LoadLevel3() {
+        if (Global.numLevelsCompleted > 2) {
+            SceneManager.LoadScene("Level3");
+        }
+    }
+
+    public void LoadLevel4() {
+        if (Global.numLevelsCompleted > 3) {
+            SceneManager.LoadScene("Level4");
+        }
+    }
+
     public void LoadLevelSelector()
     {
         SceneManager.LoadScene("LevelSelector");
