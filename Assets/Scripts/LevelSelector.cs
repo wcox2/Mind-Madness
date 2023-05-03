@@ -25,6 +25,16 @@ public class LevelSelector : MonoBehaviour {
             if (Global.numLevelsCompleted > 12) { // unlock Frontal
                 this.transform.GetChild(0).GetChild(4).GetChild(1).gameObject.SetActive(false);
             }
+
+            if (Global.tutorialStars > 0) {
+                this.transform.GetChild(0).GetChild(6).GetChild(1).gameObject.SetActive(true); // tutorial star 1
+            }
+            if (Global.tutorialStars > 1) {
+                this.transform.GetChild(0).GetChild(6).GetChild(2).gameObject.SetActive(true); // tutorial star 2
+            }
+            if (Global.tutorialStars > 2) {
+                this.transform.GetChild(0).GetChild(6).GetChild(3).gameObject.SetActive(true); // tutorial star 3
+            }
         }
 
         else if (SceneManager.GetActiveScene().name == "LevelSelectorOccipital") {
@@ -42,6 +52,50 @@ public class LevelSelector : MonoBehaviour {
 
             if (Global.numLevelsCompleted > 3) { // unlock level 4
                 this.transform.GetChild(0).GetChild(4).GetChild(1).gameObject.SetActive(false);
+            }
+
+            // Level 1 stars
+            if (Global.level1Stars > 0) {
+                this.transform.GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(true); // level 1 star 1
+            }
+            if (Global.level1Stars > 1) {
+                this.transform.GetChild(0).GetChild(1).GetChild(3).gameObject.SetActive(true); // level 1 star 2
+            }
+            if (Global.level1Stars > 2) {
+                this.transform.GetChild(0).GetChild(1).GetChild(4).gameObject.SetActive(true); // level 1 star 3
+            }
+
+            // Level 2 stars
+            if (Global.level2Stars > 0) {
+                this.transform.GetChild(0).GetChild(2).GetChild(2).gameObject.SetActive(true); // level 2 star 1
+            }
+            if (Global.level2Stars > 1) {
+                this.transform.GetChild(0).GetChild(2).GetChild(3).gameObject.SetActive(true); // level 2 star 2
+            }
+            if (Global.level2Stars > 2) {
+                this.transform.GetChild(0).GetChild(2).GetChild(4).gameObject.SetActive(true); // level 2 star 3
+            }
+
+            // Level 3 stars
+            if (Global.level3Stars > 0) {
+                this.transform.GetChild(0).GetChild(3).GetChild(2).gameObject.SetActive(true); // level 3 star 1
+            }
+            if (Global.level3Stars > 1) {
+                this.transform.GetChild(0).GetChild(3).GetChild(3).gameObject.SetActive(true); // level 3 star 2
+            }
+            if (Global.level3Stars > 2) {
+                this.transform.GetChild(0).GetChild(3).GetChild(4).gameObject.SetActive(true); // level 3 star 3
+            }
+
+            // Level 3 stars
+            if (Global.level4Stars > 0) {
+                this.transform.GetChild(0).GetChild(4).GetChild(2).gameObject.SetActive(true); // level 4 star 1
+            }
+            if (Global.level4Stars > 1) {
+                this.transform.GetChild(0).GetChild(4).GetChild(3).gameObject.SetActive(true); // level 4 star 2
+            }
+            if (Global.level4Stars > 2) {
+                this.transform.GetChild(0).GetChild(4).GetChild(4).gameObject.SetActive(true); // level 4 star 3
             }
         }
     }
@@ -111,7 +165,5 @@ public class LevelSelector : MonoBehaviour {
     public void Quit()
     {
         Application.Quit();
-
-        Debug.Log("Quit game");
     }
 }

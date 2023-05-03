@@ -225,6 +225,9 @@ MonoBehaviour:
   rotationSpeed: 50
   EndOfLevel: {fileID: 0}
   UIHud: {fileID: 0}
+  GameController: {fileID: 0}
+  Timer: {fileID: 0}
+  PlayerMovement: {fileID: 0}
 --- !u!1001 &4021144702012292455
 PrefabInstance:
   m_ObjectHideFlags: 0

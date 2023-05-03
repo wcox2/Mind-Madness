@@ -48,12 +48,21 @@ public class MemoryScript : MonoBehaviour
         UIHud.SetActive(false); 
         if (SceneManager.GetActiveScene().name == "TutorialLevel") {
             Global.numLevelsCompleted = 1;
+            if (Global.tutorialStars < stars) {
+                Global.tutorialStars = stars;
+            }
         }
         else if (SceneManager.GetActiveScene().name == "Level1") {
             Global.numLevelsCompleted = 2;
+            if (Global.level1Stars < stars) {
+                Global.level1Stars = stars;
+            }
         }
         else if (SceneManager.GetActiveScene().name == "Level2") {
             Global.numLevelsCompleted = 3;
+            if (Global.level2Stars < stars) {
+                Global.level2Stars = stars;
+            }
         }
     }
 
@@ -62,7 +71,7 @@ public class MemoryScript : MonoBehaviour
         if (PlayerMovement.numDeaths > 0) {
             stars--;
         }
-        if (Timer.currentTime > 30) {
+        if (Timer.currentTime > 20) {
             stars--;
         }
         return stars;
