@@ -13,21 +13,23 @@ public class GameController : MonoBehaviour {
     void Start()
     {
         // pauseScreen = UI.transform.GetChild(4).gameObject;
-        // UI = GameObject.Find("UI");
+        UI = GameObject.Find("UI");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (UI == null) {
-            UI = GameObject.Find("UI");
-        }
-        if(Input.GetKeyDown(KeyCode.Escape) && (!isPaused)) {
-            pauseGame();
-        }
+        if (SceneManager.GetActiveScene().name != "LevelSelectorOccipital" && SceneManager.GetActiveScene().name != "LevelSelector" && SceneManager.GetActiveScene().name != "HomeScreen") {
+            if (UI == null) {
+                UI = GameObject.Find("UI");
+            }
+            if(Input.GetKeyDown(KeyCode.Escape) && (!isPaused)) {
+                pauseGame();
+            }
 
-        else if(Input.GetKeyDown(KeyCode.Escape) && (isPaused)) {
-            unpauseGame();
+            else if(Input.GetKeyDown(KeyCode.Escape) && (isPaused)) {
+                unpauseGame();
+            }
         }
     }
 
@@ -47,9 +49,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void pauseGame() {
-        // Debug.Log("Set Active Before");
-        // pauseScreen.SetActive(true);
-        // Debug.Log("Set Active After");
+        UI.transform.GetChild(11).gameObject.SetActive(true);
         isPaused = true;
         Time.timeScale = 0;
     }
@@ -57,9 +57,7 @@ public class GameController : MonoBehaviour {
     public void unpauseGame() {
         Time.timeScale = 1;
         isPaused = false;
-        // Debug.Log("Set Inactive Before");
-        // pauseScreen.SetActive(false);
-        // Debug.Log("Set Inactive After");
+        UI.transform.GetChild(11).gameObject.SetActive(false);
     }
 
     public void LoadLevel2() {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -41,53 +42,54 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (isPaused && Input.GetKeyDown(KeyCode.Escape)) { // unpause
-            GameController.unpauseGame();
-            isPaused = false;
-        }
-        else if (!isPaused) {
-            // Jump
-            if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
-                _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-                _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-                currentJumps--;
-                Debug.Log("Jump");
-                animationScript.UpdateIsJumping(true);
-                if(currentJumps == 0)
-                {
-                    animationScript.UpdateIsDoubleJump(true);
+        if (SceneManager.GetActiveScene().name != "LevelSelectorOccipital" && SceneManager.GetActiveScene().name != "LevelSelector" && SceneManager.GetActiveScene().name != "HomeScreen") {
+            if (isPaused && Input.GetKeyDown(KeyCode.Escape)) { // unpause
+                GameController.unpauseGame();
+                isPaused = false;
+            }
+            else if (!isPaused) {
+                // Jump
+                if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
+                    _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+                    _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
+                    currentJumps--;
+                    animationScript.UpdateIsJumping(true);
+                    if(currentJumps == 0)
+                    {
+                        animationScript.UpdateIsDoubleJump(true);
+                    }
                 }
-            }
 
-            // Dash
-            if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
-                StartCoroutine(dash());
-            }
+                // Dash
+                if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
+                    StartCoroutine(dash());
+                }
 
-            // Downslam
-            if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
-                StartCoroutine(freezePlayerTimer(slamFreezeTime));
-                animationScript.UpdateIsSlamming(true);
-                animationScript.UpdateIsJumping(false);
-            }
+                // Downslam
+                if(Input.GetKeyDown(KeyCode.S) && (isFrozen == false) && (isGrounded == false)) {
+                    StartCoroutine(freezePlayerTimer(slamFreezeTime));
+                    animationScript.UpdateIsSlamming(true);
+                    animationScript.UpdateIsJumping(false);
+                }
 
-            // Player Orientation Change
-            if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
-                isFacingRight = true;
-                sprite.transform.Rotate(0, 180, 0);
-            }
-            if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
-                isFacingRight = false;
-                sprite.transform.Rotate(0, 180, 0);
-            }
+                // Player Orientation Change
+                if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
+                    isFacingRight = true;
+                    sprite.transform.Rotate(0, 180, 0);
+                }
+                if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
+                    isFacingRight = false;
+                    sprite.transform.Rotate(0, 180, 0);
+                }
 
-            hInput = Input.GetAxis("Horizontal") * movementSpeed;
-            
-            animationScript.UpdateSpeed(hInput);
+                hInput = Input.GetAxis("Horizontal") * movementSpeed;
+                
+                animationScript.UpdateSpeed(hInput);
 
-            if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause
-                isPaused = true;
-                GameController.pauseGame();
+                if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause
+                    isPaused = true;
+                    GameController.pauseGame();
+                }
             }
         }
     }
