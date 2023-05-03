@@ -53,6 +53,7 @@ public class MemoryScript : MonoBehaviour
             }
         }
         else if (SceneManager.GetActiveScene().name == "Level1") {
+            Global.numLevelsCompleted = 2;
             if (Global.level1Stars < stars) {
                 Global.level1Stars = stars;
             }

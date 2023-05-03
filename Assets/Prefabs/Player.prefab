@@ -136,7 +136,7 @@ Camera:
   m_GameObject: {fileID: 4740046384044965218}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.1509434, g: 0.1333808, b: 0.1333808, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 4740046385868407358}
   - component: {fileID: 1917961119}
   - component: {fileID: 1542641370}
+  - component: {fileID: 1180013220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -419,5 +420,25 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 1.45, z: 0.25}
+  m_Size: {x: 0.9, y: 1.45, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1180013220
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740046385868407333}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

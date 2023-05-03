@@ -61,4 +61,10 @@ public class GameController : MonoBehaviour {
         // pauseScreen.SetActive(false);
         // Debug.Log("Set Inactive After");
     }
+
+    public void LoadLevel2() {
+        if (Global.numLevelsCompleted > 1) {
+            SceneManager.LoadScene("Level2");
+        }
+    }
 }
