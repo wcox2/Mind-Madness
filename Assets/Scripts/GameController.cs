@@ -20,9 +20,9 @@ public class GameController : MonoBehaviour {
     void Update()
     {
         if (SceneManager.GetActiveScene().name != "LevelSelectorOccipital" && SceneManager.GetActiveScene().name != "LevelSelector" && SceneManager.GetActiveScene().name != "HomeScreen") {
-            if (UI == null) {
-                UI = GameObject.Find("UI");
-            }
+            // if (UI == null) {
+            //     UI = GameObject.Find("UI");
+            // }
             if(Input.GetKeyDown(KeyCode.Escape) && (!isPaused)) {
                 pauseGame();
             }

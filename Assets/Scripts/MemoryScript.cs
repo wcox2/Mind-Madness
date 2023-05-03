@@ -90,23 +90,21 @@ public class MemoryScript : MonoBehaviour
 
     int calculateStars() {
         int stars = 3;
-        if (PlayerMovement.numDeaths > 0) {
-            stars--;
-        }
         if (SceneManager.GetActiveScene().name == "Level4") {
-            if (Timer.currentTime > 60) {
+            if (Timer.currentTime > 50) {
             stars--;
             }
-        }
-        else if (SceneManager.GetActiveScene().name == "Level3") {
-            if (Timer.currentTime > 30) {
-            stars--;
+            if (PlayerMovement.numDeaths > 3) {
+                stars--;
             }
         }
         else {
             if (Timer.currentTime > 20) {
                 stars--;
             }
+            if (PlayerMovement.numDeaths > 0) {
+            stars--;
+        }
         }
         return stars;
     }

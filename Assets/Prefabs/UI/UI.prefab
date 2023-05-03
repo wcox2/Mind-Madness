@@ -2354,7 +2354,7 @@ PrefabInstance:
     - target: {fileID: 3249758211378212006, guid: 9f21830311a0c0e45bef970c593dbba9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5534420940985480129}
+      objectReference: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
     - target: {fileID: 3249758211461547930, guid: 9f21830311a0c0e45bef970c593dbba9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2370,7 +2370,7 @@ PrefabInstance:
     - target: {fileID: 3249758212273993412, guid: 9f21830311a0c0e45bef970c593dbba9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5534420940985480129}
+      objectReference: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
     - target: {fileID: 3249758212273993412, guid: 9f21830311a0c0e45bef970c593dbba9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: loadNextScene
@@ -2382,7 +2382,7 @@ PrefabInstance:
     - target: {fileID: 3249758212370651861, guid: 9f21830311a0c0e45bef970c593dbba9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5534420940985480129}
+      objectReference: {fileID: 5777938111921591727, guid: f759fef4053319f42b39df17ef6480aa, type: 3}
     - target: {fileID: 3249758212370651862, guid: 9f21830311a0c0e45bef970c593dbba9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -150

@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
                 GameController.unpauseGame();
                 isPaused = false;
             }
-            else if (!isPaused) {
+            if (!isPaused) {
                 // Jump
                 if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
                     _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
