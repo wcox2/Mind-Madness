@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class MemoryScript : MonoBehaviour
 {
@@ -14,13 +15,15 @@ public class MemoryScript : MonoBehaviour
     public GameController GameController;
     public Timer Timer;
     public PlayerMovement PlayerMovement;
-
-    
+    public GameObject CutScene;
+    [SerializeField]
+    VideoPlayer CutSceneVideoPlayer;
 
     void Start()
     {
         startPos = transform.position; // Set the object's initial position
-
+        CutScene.SetActive(false);
+        
     }
 
 
@@ -35,24 +38,37 @@ public class MemoryScript : MonoBehaviour
     }
 
     void OnTriggerEnter() {
+        CutScene.SetActive(true);
+        CutSceneVideoPlayer.loopPointReached += VideoFinish;
+    }
+
+    void VideoFinish(VideoPlayer vp)
+    {
+        Debug.Log("Video Ended");
+        CutScene.SetActive(false);
         int stars = calculateStars();
         Time.timeScale = 0;
         EndOfLevel.SetActive(true);
         EndOfLevel.transform.GetChild(4).gameObject.SetActive(true);
-        if (stars >= 2) {
+        if (stars >= 2)
+        {
             EndOfLevel.transform.GetChild(5).gameObject.SetActive(true);
         }
-        if (stars == 3) {
+        if (stars == 3)
+        {
             EndOfLevel.transform.GetChild(6).gameObject.SetActive(true);
         }
-        UIHud.SetActive(false); 
-        if (SceneManager.GetActiveScene().name == "TutorialLevel") {
+        UIHud.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "TutorialLevel")
+        {
             Global.numLevelsCompleted = 1;
         }
-        else if (SceneManager.GetActiveScene().name == "Level1") {
+        else if (SceneManager.GetActiveScene().name == "Level1")
+        {
             Global.numLevelsCompleted = 2;
         }
-        else if (SceneManager.GetActiveScene().name == "Level2") {
+        else if (SceneManager.GetActiveScene().name == "Level2")
+        {
             Global.numLevelsCompleted = 3;
         }
     }
