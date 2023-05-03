@@ -1418,6 +1418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Color Collect
       objectReference: {fileID: 0}
+    - target: {fileID: 4810256962415252909, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: m_TagString
+      value: ColorOrb
+      objectReference: {fileID: 0}
     - target: {fileID: 4810256962415252911, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
