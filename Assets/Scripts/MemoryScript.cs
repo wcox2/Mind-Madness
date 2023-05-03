@@ -74,16 +74,16 @@ public class MemoryScript : MonoBehaviour
             if (Global.numLevelsCompleted < 4) {
                 Global.numLevelsCompleted = 4;
             }
-            if (Global.level2Stars < stars) {
-                Global.level2Stars = stars;
+            if (Global.level3Stars < stars) {
+                Global.level3Stars = stars;
             }
         }
         else if (SceneManager.GetActiveScene().name == "Level4") {
             if (Global.numLevelsCompleted < 5) {
                 Global.numLevelsCompleted = 5;
             }
-            if (Global.level2Stars < stars) {
-                Global.level2Stars = stars;
+            if (Global.level4Stars < stars) {
+                Global.level4Stars = stars;
             }
         }
     }
