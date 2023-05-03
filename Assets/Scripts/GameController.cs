@@ -23,12 +23,12 @@ public class GameController : MonoBehaviour {
             // if (UI == null) {
             //     UI = GameObject.Find("UI");
             // }
-            if(Input.GetKeyDown(KeyCode.Escape) && (!isPaused)) {
-                pauseGame();
+            if(Input.GetKeyDown(KeyCode.Escape) && (isPaused)) {
+                unpauseGame();
             }
 
-            else if(Input.GetKeyDown(KeyCode.Escape) && (isPaused)) {
-                unpauseGame();
+            else if(Input.GetKeyDown(KeyCode.Escape) && (!isPaused)) {
+                pauseGame();
             }
         }
     }

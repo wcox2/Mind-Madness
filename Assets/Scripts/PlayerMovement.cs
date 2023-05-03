@@ -43,11 +43,7 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (SceneManager.GetActiveScene().name != "LevelSelectorOccipital" && SceneManager.GetActiveScene().name != "LevelSelector" && SceneManager.GetActiveScene().name != "HomeScreen") {
-            if (isPaused && Input.GetKeyDown(KeyCode.Escape)) { // unpause
-                GameController.unpauseGame();
-                isPaused = false;
-            }
-            if (!isPaused) {
+            if (!GameController.isPaused) {
                 // Jump
                 if(Input.GetKeyDown(KeyCode.W) && (isFrozen == false) && (isDashing == false) && (currentJumps > 0)) {
                     _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
@@ -85,11 +81,6 @@ public class PlayerMovement : MonoBehaviour {
                 hInput = Input.GetAxis("Horizontal") * movementSpeed;
                 
                 animationScript.UpdateSpeed(hInput);
-
-                if (!isPaused && Input.GetKeyDown(KeyCode.Escape)) { // pause
-                    isPaused = true;
-                    GameController.pauseGame();
-                }
             }
         }
     }
