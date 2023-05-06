@@ -3321,12 +3321,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformAppear: {fileID: 164372285}
   platformDisappear: {fileID: 1258625543}
-  playerLight: {fileID: 0}
-  sprite: {fileID: 0}
-  player: {fileID: 0}
+  playerLight: {fileID: 508547517}
+  sprite: {fileID: 508547516}
+  player: {fileID: 508547518}
   colorSelect: 0
   fadeSpeed: 0.01
-  lightAppear: {fileID: 0}
+  lightAppear: {fileID: 816440666}
   allColorCollects: {fileID: 1959479105}
 --- !u!135 &118066220
 SphereCollider:
@@ -11454,12 +11454,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformAppear: {fileID: 735283340}
   platformDisappear: {fileID: 1258625543}
-  playerLight: {fileID: 0}
-  sprite: {fileID: 0}
-  player: {fileID: 0}
+  playerLight: {fileID: 508547517}
+  sprite: {fileID: 508547516}
+  player: {fileID: 508547518}
   colorSelect: 0
   fadeSpeed: 0.01
-  lightAppear: {fileID: 0}
+  lightAppear: {fileID: 1089142723}
   allColorCollects: {fileID: 1959479105}
 --- !u!135 &362691229
 SphereCollider:
@@ -11703,6 +11703,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 508547518}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 508547516}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1952366054}
     - target: {fileID: 1240058954627009807, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -15045,6 +15057,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231672fa430695847838801a4fe75f17, type: 3}
+--- !u!1 &508547516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4740046384175415125, guid: 231672fa430695847838801a4fe75f17, type: 3}
+  m_PrefabInstance: {fileID: 508547515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &508547517 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 487099395, guid: 231672fa430695847838801a4fe75f17, type: 3}
+  m_PrefabInstance: {fileID: 508547515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &508547518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4740046385868407333, guid: 231672fa430695847838801a4fe75f17, type: 3}
+  m_PrefabInstance: {fileID: 508547515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &510856501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16256,6 +16283,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 508547518}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 508547516}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1952366054}
     - target: {fileID: 1240058954627009807, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -39703,12 +39742,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformAppear: {fileID: 1258625543}
   platformDisappear: {fileID: 735283340}
-  playerLight: {fileID: 0}
-  sprite: {fileID: 0}
-  player: {fileID: 0}
+  playerLight: {fileID: 508547517}
+  sprite: {fileID: 508547516}
+  player: {fileID: 508547518}
   colorSelect: 0
   fadeSpeed: 0.01
-  lightAppear: {fileID: 0}
+  lightAppear: {fileID: 1683645125}
   allColorCollects: {fileID: 1959479105}
 --- !u!135 &1293365894
 SphereCollider:
@@ -58966,7 +59005,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4740046385868407329, guid: 231672fa430695847838801a4fe75f17, type: 3}
   m_PrefabInstance: {fileID: 508547515}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 508547518}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a464d6d1ba3ffb649bde31098b8138e8, type: 3}
