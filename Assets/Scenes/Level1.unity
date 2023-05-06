@@ -973,6 +973,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 303471213}
     m_Modifications:
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775737966}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1690349001}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platform
       value: 
       objectReference: {fileID: 0}
@@ -980,6 +988,14 @@ PrefabInstance:
       propertyPath: fadeSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: lightAppear
+      value: 
+      objectReference: {fileID: 1710960213}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: playerLight
+      value: 
+      objectReference: {fileID: 1634148977}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platformAppear
       value: 
@@ -1347,6 +1363,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775737966}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1690349001}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platform
       value: 
       objectReference: {fileID: 0}
@@ -1358,6 +1382,14 @@ PrefabInstance:
       propertyPath: colorSelect
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: lightAppear
+      value: 
+      objectReference: {fileID: 1758125421}
+    - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+      propertyPath: playerLight
+      value: 
+      objectReference: {fileID: 1634148977}
     - target: {fileID: 4810256962415252904, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
       propertyPath: platformAppear
       value: 
@@ -4909,9 +4941,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 303471213}
     m_Modifications:
     - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 775737966}
+    - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1690349001}
+    - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
       propertyPath: colorSelect
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
+      propertyPath: lightAppear
+      value: 
+      objectReference: {fileID: 1554981749}
+    - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
+      propertyPath: playerLight
+      value: 
+      objectReference: {fileID: 1634148977}
     - target: {fileID: 4810256962415252904, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
       propertyPath: platformAppear
       value: 
@@ -5156,6 +5204,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &775737966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4740046385868407333, guid: 231672fa430695847838801a4fe75f17, type: 3}
+  m_PrefabInstance: {fileID: 1698722689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826487607
 GameObject:
   m_ObjectHideFlags: 0
@@ -7848,6 +7901,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!108 &1554981749 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1964018869, guid: f3ba9770b4d084967a3f35e521c78508, type: 3}
+  m_PrefabInstance: {fileID: 773341989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1591015908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8118,6 +8176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
+--- !u!108 &1634148977 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 487099395, guid: 231672fa430695847838801a4fe75f17, type: 3}
+  m_PrefabInstance: {fileID: 1698722689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1635791165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8488,12 +8551,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4740046385868407329, guid: 231672fa430695847838801a4fe75f17, type: 3}
   m_PrefabInstance: {fileID: 1698722689}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 775737966}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a464d6d1ba3ffb649bde31098b8138e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!108 &1710960213 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1964018869, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+  m_PrefabInstance: {fileID: 133255008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1716033260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8762,6 +8830,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7120482638147999538, guid: 34244eb5050d145c0bfd5377ba884424, type: 3}
   m_PrefabInstance: {fileID: 1662492975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1758125421 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1964018869, guid: 7115d2f8273b8924aa5d02f2ab3924d4, type: 3}
+  m_PrefabInstance: {fileID: 220067189}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1790058465 stripped
 GameObject:

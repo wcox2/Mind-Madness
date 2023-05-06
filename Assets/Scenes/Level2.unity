@@ -7123,7 +7123,7 @@ MonoBehaviour:
   player: {fileID: 1180013210}
   colorSelect: 3
   fadeSpeed: 0.01
-  lightAppear: {fileID: 0}
+  lightAppear: {fileID: 1791652014}
   allColorCollects: {fileID: 1693814777}
 --- !u!135 &374312164
 SphereCollider:
@@ -11541,6 +11541,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1180013210}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1102704390}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1180013215}
     - target: {fileID: 1240058954627009807, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -32487,6 +32499,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1180013210}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1102704390}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1180013215}
     - target: {fileID: 1240058954627009807, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -38081,7 +38105,7 @@ MonoBehaviour:
   player: {fileID: 1180013210}
   colorSelect: 2
   fadeSpeed: 0.01
-  lightAppear: {fileID: 0}
+  lightAppear: {fileID: 1165649905}
   allColorCollects: {fileID: 1693814777}
 --- !u!135 &1490242164
 SphereCollider:
@@ -42815,6 +42839,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1180013210}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 1102704390}
+    - target: {fileID: 1240058954627009806, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1180013215}
     - target: {fileID: 1240058954627009807, guid: 99ba946aac0cc46fcae19413ee0b9970, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -43826,7 +43862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1778702593}
   m_Layer: 0
-  m_Name: Green
+  m_Name: Green Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45074,7 +45110,7 @@ MonoBehaviour:
   player: {fileID: 1180013210}
   colorSelect: 1
   fadeSpeed: 0.01
-  lightAppear: {fileID: 0}
+  lightAppear: {fileID: 1037735133}
   allColorCollects: {fileID: 1693814777}
 --- !u!135 &1838925814
 SphereCollider:
