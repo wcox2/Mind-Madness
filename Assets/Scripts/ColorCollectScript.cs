@@ -16,7 +16,9 @@ public class ColorCollectScript : MonoBehaviour {
     public float fadeSpeed = 0.01f;
     public Light lightAppear;
     public GameObject allColorCollects;
-    
+
+    [SerializeField] private AudioSource collectSound;
+
 
     void Start() {
         player = GameObject.FindWithTag("Player");
@@ -55,6 +57,7 @@ public class ColorCollectScript : MonoBehaviour {
                 }
             }
             platformAppear.SetActive(true);
+            collectSound.Play();
         }
     }
 
