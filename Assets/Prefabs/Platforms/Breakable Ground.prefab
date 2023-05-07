@@ -112,4 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   player: {fileID: 0}
+  playerScript: {fileID: 0}
   blockDestroyParticle: {fileID: 3468188643427199458, guid: 2aaab3652897e934db69b563293afee4, type: 3}
+  breakSound: {fileID: 6007052682426736429, guid: e34760aec8c2e4009a85bde9588e47ca, type: 3}
