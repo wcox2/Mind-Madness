@@ -379,6 +379,9 @@ MonoBehaviour:
   GameController: {fileID: 0}
   numDeaths: 0
   isPaused: 0
+  jumpSound: {fileID: 8181743684348988864, guid: e0c40fb88b5b34a518debfd00752ee42, type: 3}
+  slamSound: {fileID: 6330113727002415701, guid: fe28438d7b2d447ba8ffe6541c16756b, type: 3}
+  dashSound: {fileID: 6330113727002415701, guid: fe28438d7b2d447ba8ffe6541c16756b, type: 3}
 --- !u!54 &4740046385868407358
 Rigidbody:
   m_ObjectHideFlags: 0

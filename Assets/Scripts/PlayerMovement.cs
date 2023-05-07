@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private AudioSource jumpSound;
 
-    [SerializeField] private AudioSource walkSound;
+    //[SerializeField] private AudioSource walkSound;
 
     [SerializeField] private AudioSource slamSound;
 
@@ -76,19 +76,19 @@ public class PlayerMovement : MonoBehaviour {
                     StartCoroutine(freezePlayerTimer(slamFreezeTime));
                     animationScript.UpdateIsSlamming(true);
                     animationScript.UpdateIsJumping(false);
-                    slamSound.Play();
+                    //slamSound.Play();
                 }
 
                 // Player Orientation Change
                 if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
                     isFacingRight = true;
                     sprite.transform.Rotate(0, 180, 0);
-                    walkSound.Play();
+                    //walkSound.Play();
                 }
                 if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
                     isFacingRight = false;
                     sprite.transform.Rotate(0, 180, 0);
-                    walkSound.Play();
+                    //walkSound.Play();
                 }
 
                 hInput = Input.GetAxis("Horizontal") * movementSpeed;

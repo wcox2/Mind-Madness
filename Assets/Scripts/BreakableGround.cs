@@ -10,7 +10,7 @@ public class BreakableGround : MonoBehaviour {
     public PlayerMovement playerScript;
     public ParticleSystem blockDestroyParticle;
 
-
+    [SerializeField] private AudioSource breakSound;
 
     void Start() {
         player = GameObject.FindWithTag("Player");
@@ -29,6 +29,7 @@ public class BreakableGround : MonoBehaviour {
         if ((col.gameObject.tag == "Player") && (playerScript.isSlamming)) {
             Instantiate(blockDestroyParticle.gameObject, transform.position, transform.rotation);
             Destroy(gameObject);
+            breakSound.Play();
         }
     }
 }
