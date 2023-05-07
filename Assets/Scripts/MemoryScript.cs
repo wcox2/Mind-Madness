@@ -40,17 +40,16 @@ public class MemoryScript : MonoBehaviour
 
     void OnTriggerEnter()
     {
+        Time.timeScale = 0;
         CutScene.SetActive(true);
         CutSceneVideoPlayer.loopPointReached += VideoFinish;
     }
 
     void VideoFinish(VideoPlayer pv) {
-        Debug.Log("Video Ended");
         CutScene.SetActive(false);
         
 
         int stars = calculateStars();
-        Time.timeScale = 0;
         EndOfLevel.SetActive(true);
         EndOfLevel.transform.GetChild(4).gameObject.SetActive(true);
         if (stars >= 2) {

@@ -100,11 +100,6 @@ Library: lib_burst_generated
 --compilation-defines=NET_STANDARD_2_1
 --compilation-defines=NETSTANDARD
 --compilation-defines=NETSTANDARD2_1
---compilation-defines=DEVELOPMENT_BUILD
---compilation-defines=ENABLE_PROFILER
---compilation-defines=DEBUG
---compilation-defines=TRACE
---compilation-defines=UNITY_ASSERTIONS
 --compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
 --compilation-defines=ENABLE_DIRECTOR
 --compilation-defines=ENABLE_LOCALIZATION
@@ -131,7 +126,6 @@ Library: lib_burst_generated
 --compilation-defines=USING_PARTICLE_SYSTEM
 --linker-options=PdbAltPath="Mind Madness_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
---debug=Full
 --output=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
@@ -151,6 +145,8 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.ProBuilder.KdTree.dll
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.ProBuilder.Stl.dll
+--root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.Recorder.dll
+--root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.Recorder.Base.dll
 --assembly-folder=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -258,11 +254,6 @@ Library: lib_burst_generated
 --compilation-defines=NET_STANDARD_2_1
 --compilation-defines=NETSTANDARD
 --compilation-defines=NETSTANDARD2_1
---compilation-defines=DEVELOPMENT_BUILD
---compilation-defines=ENABLE_PROFILER
---compilation-defines=DEBUG
---compilation-defines=TRACE
---compilation-defines=UNITY_ASSERTIONS
 --compilation-defines=ENABLE_CUSTOM_RENDER_TEXTURE
 --compilation-defines=ENABLE_DIRECTOR
 --compilation-defines=ENABLE_LOCALIZATION
@@ -289,7 +280,6 @@ Library: lib_burst_generated
 --compilation-defines=USING_PARTICLE_SYSTEM
 --linker-options=PdbAltPath="Mind Madness_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
---debug=Full
 --output=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
@@ -309,6 +299,8 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.ProBuilder.KdTree.dll
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
 --root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.ProBuilder.Stl.dll
+--root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.Recorder.dll
+--root-assembly=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\Unity.Recorder.Base.dll
 --assembly-folder=C:\Users\chess\OneDrive\Documents\GitHub\Mind-Madness\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
