@@ -41,34 +41,21 @@ public class ColorPlatform : MonoBehaviour {
             if (this.transform.childCount > 0) {
                 this.transform.GetChild(0).GetComponent<Light>().intensity = f;
             }
+            // this.GetComponent<Renderer>().material.color = color;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
     }
 
     public IEnumerator FadeOutObject() {
-        // for (float f = 0; f <= 0.5501; f += fadeSpeed) {
-        //     Color colorCollect = this.GetComponent<Renderer>().material.color;
-        //     // Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
-        //     if (this.transform.childCount > 0) {
-        //         light.intensity = 0.55f-f;
-        //     }
-        //     colorCollect.a = 0.55f-f;
-        //     // colorPlatform.a = 0.55f-f;
-        //     this.GetComponent<Renderer>().material.color = colorCollect;
-        //     yield return new WaitForSecondsRealtime(fadeSpeed);
-        // }
-
-        Material[] materials = this.GetComponent<Renderer>().materials;
-        for (float f = 0.501f; f > 0; f -= fadeSpeed) {
-            Color color;
-            foreach (Material material in materials) {
-                color = material.color;
-                color.a = f;
-                material.color = color;
-            }
+        for (float f = 0; f <= 0.5501; f += fadeSpeed) {
+            Color colorCollect = this.GetComponent<Renderer>().material.color;
+            // Color colorPlatform = platformDisappear.GetComponent<Renderer>().material.color;
             if (this.transform.childCount > 0) {
-                this.transform.GetChild(0).GetComponent<Light>().intensity = f;
+                light.intensity = 0.55f-f;
             }
+            colorCollect.a = 0.55f-f;
+            // colorPlatform.a = 0.55f-f;
+            this.GetComponent<Renderer>().material.color = colorCollect;
             yield return new WaitForSecondsRealtime(fadeSpeed);
         }
         thisObject.SetActive(false);

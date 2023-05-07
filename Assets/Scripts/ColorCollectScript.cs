@@ -64,21 +64,20 @@ public class ColorCollectScript : MonoBehaviour {
 
     public IEnumerator FadeOutObject() {
     Color colorCollect = this.GetComponent<Renderer>().material.color;
-    for (float f = 0.0f; f <= 0.551f; f += fadeSpeed) {
-        lightAppear.intensity = 0.55f-f;
-        colorCollect.a = 0.55f-f;
+
+
+    for (float f = 0; f <= 0.451; f += fadeSpeed) {
+        lightAppear.intensity = 0.45f-f;
+        colorCollect.a = 0.45f-f;
         foreach (Renderer childRenderer in platformDisappear.GetComponentsInChildren<Renderer>()) {
-            Material[] materials = childRenderer.GetComponent<Renderer>().materials;
-            Color color;
-            foreach (Material material in materials) {
-                color = material.color;
-                color.a = 0.55f - f;
-                material.color = color;
-            }
+            Color childColor = childRenderer.material.color;
+            childColor.a = 0.45f-f;
+            childRenderer.material.color = childColor;
         }
         this.GetComponent<Renderer>().material.color = colorCollect;
         yield return new WaitForSecondsRealtime(fadeSpeed);
     }
+
     platformDisappear.SetActive(false);
     thisObject.SetActive(false);
     }
