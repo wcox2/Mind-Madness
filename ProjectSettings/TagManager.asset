@@ -9,6 +9,7 @@ TagManager:
   - ColorOrb
   - BreakableGround
   - Spikes
+  - GameMusic
   layers:
   - Default
   - TransparentFX

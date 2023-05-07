@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -214,6 +214,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2013052147}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadLevel4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1228498904}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -652,6 +664,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2013052147}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadLevelSelector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1228498904}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1310,6 +1334,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1228498904}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &664867346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,6 +1691,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910368379}
   m_CullTransparentMesh: 1
+--- !u!82 &943828298 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7189366871401197514, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+  m_PrefabInstance: {fileID: 2059249587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &955255705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2083,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1228498904}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1109462488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2227,6 +2280,7 @@ GameObject:
   - component: {fileID: 1228498903}
   - component: {fileID: 1228498902}
   - component: {fileID: 1228498901}
+  - component: {fileID: 1228498904}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2322,6 +2376,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1228498904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228498899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7d8df7988b048feacf77689ccf2758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  src: {fileID: 943828298}
+  sfx1: {fileID: 8300000, guid: 48aa54c426d564bbe8690e85a80c6087, type: 3}
 --- !u!1001 &1312631239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3318,6 +3386,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1228498904}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011497372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3478,3 +3558,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048195775}
   m_CullTransparentMesh: 1
+--- !u!1001 &2059249587
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 243.05402
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 273.50903
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197515, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_Name
+      value: sfx
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}

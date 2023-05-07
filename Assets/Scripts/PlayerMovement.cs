@@ -32,6 +32,14 @@ public class PlayerMovement : MonoBehaviour {
     public int numDeaths;
     public bool isPaused = false;
 
+    [SerializeField] private AudioSource jumpSound;
+
+    [SerializeField] private AudioSource walkSound;
+
+    [SerializeField] private AudioSource slamSound;
+
+    [SerializeField] private AudioSource dashSound;
+
     // Start is called before the first frame update
     void Start() {
         sprite = this.transform.GetChild(0).gameObject;
@@ -54,11 +62,13 @@ public class PlayerMovement : MonoBehaviour {
                     {
                         animationScript.UpdateIsDoubleJump(true);
                     }
+                    jumpSound.Play();
                 }
 
                 // Dash
                 if(Input.GetKeyDown(KeyCode.Space) && (isFrozen == false) && (canDash)) { 
                     StartCoroutine(dash());
+                    dashSound.Play();
                 }
 
                 // Downslam
@@ -66,16 +76,19 @@ public class PlayerMovement : MonoBehaviour {
                     StartCoroutine(freezePlayerTimer(slamFreezeTime));
                     animationScript.UpdateIsSlamming(true);
                     animationScript.UpdateIsJumping(false);
+                    slamSound.Play();
                 }
 
                 // Player Orientation Change
                 if (Input.GetKeyDown(KeyCode.D) && (isFacingRight == false)) {
                     isFacingRight = true;
                     sprite.transform.Rotate(0, 180, 0);
+                    walkSound.Play();
                 }
                 if (Input.GetKeyDown(KeyCode.A) && (isFacingRight)) {
                     isFacingRight = false;
                     sprite.transform.Rotate(0, 180, 0);
+                    walkSound.Play();
                 }
 
                 hInput = Input.GetAxis("Horizontal") * movementSpeed;

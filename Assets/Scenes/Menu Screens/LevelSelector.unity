@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414726, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -422,6 +422,18 @@ MonoBehaviour:
       - m_Target: {fileID: 940006141}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadOccipital
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1321019737}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -844,6 +856,18 @@ MonoBehaviour:
       - m_Target: {fileID: 940006141}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadTemporal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1321019737}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1597,6 +1621,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1321019737}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1114235879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1694,7 @@ GameObject:
   - component: {fileID: 1321019736}
   - component: {fileID: 1321019735}
   - component: {fileID: 1321019734}
+  - component: {fileID: 1321019737}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1753,6 +1790,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1321019737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321019732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7d8df7988b048feacf77689ccf2758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  src: {fileID: 1388034010}
+  sfx1: {fileID: 8300000, guid: 48aa54c426d564bbe8690e85a80c6087, type: 3}
 --- !u!1 &1337538666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1892,18 @@ MonoBehaviour:
       - m_Target: {fileID: 940006141}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadParietal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1321019737}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2032,6 +2095,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372834472}
   m_CullTransparentMesh: 1
+--- !u!1001 &1388034009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 243.05402
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 273.50903
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197513, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189366871401197515, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+      propertyPath: m_Name
+      value: sfx
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+--- !u!82 &1388034010 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7189366871401197514, guid: 28bb546b15da94d189cd25b5f9f327eb, type: 3}
+  m_PrefabInstance: {fileID: 1388034009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1523259479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,6 +2512,18 @@ MonoBehaviour:
       - m_Target: {fileID: 940006141}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadHomeScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1321019737}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2873,6 +3010,18 @@ MonoBehaviour:
       - m_Target: {fileID: 940006141}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
         m_MethodName: LoadTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1321019737}
+        m_TargetAssemblyTypeName: SfxPlayer, Assembly-CSharp
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

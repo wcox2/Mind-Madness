@@ -15,7 +15,8 @@ public class TutorialText : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        sprite = player.transform.GetChild(0).gameObject;
+
+        //sprite = player.transform.GetChild(0).gameObject;
         spriteRenderer = sprite.GetComponent<SpriteRenderer>();
         colorCollider = GetComponent<Collider>();
         playerCollider = sprite.GetComponent<Collider>();
