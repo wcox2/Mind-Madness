@@ -20,13 +20,13 @@ public class ColorCollectScript : MonoBehaviour {
 
     void Start() {
         player = GameObject.FindWithTag("Player");
-        sprite = player.transform.GetChild(0).gameObject;
+        // sprite = player.transform.GetChild(0).gameObject;
         spriteRenderer = sprite.GetComponent<SpriteRenderer>();
         colorCollider = GetComponent<Collider>();
         playerCollider = sprite.GetComponent<Collider>();
-        playerLight = player.transform.GetChild(2).GetComponent<Light>();
+        // playerLight = player.transform.GetChild(2).GetComponent<Light>();
         thisObject = this.gameObject;
-        lightAppear = this.transform.GetChild(0).GetComponent<Light>();
+        // lightAppear = this.transform.GetChild(0).GetComponent<Light>();
     }
 
     void Update() {

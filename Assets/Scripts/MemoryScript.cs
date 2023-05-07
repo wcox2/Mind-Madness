@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class MemoryScript : MonoBehaviour
 {
@@ -14,13 +15,16 @@ public class MemoryScript : MonoBehaviour
     public GameController GameController;
     public Timer Timer;
     public PlayerMovement PlayerMovement;
+    public GameObject CutScene;
+    [SerializeField]
+    VideoPlayer CutSceneVideoPlayer;
 
-    
+
 
     void Start()
     {
         startPos = transform.position; // Set the object's initial position
-
+        
     }
 
 
@@ -34,7 +38,17 @@ public class MemoryScript : MonoBehaviour
         transform.Rotate(Vector3.down * rotationSpeed * Time.deltaTime);
     }
 
-    void OnTriggerEnter() {
+    void OnTriggerEnter()
+    {
+        CutScene.SetActive(true);
+        CutSceneVideoPlayer.loopPointReached += VideoFinish;
+    }
+
+    void VideoFinish(VideoPlayer pv) {
+        Debug.Log("Video Ended");
+        CutScene.SetActive(false);
+        
+
         int stars = calculateStars();
         Time.timeScale = 0;
         EndOfLevel.SetActive(true);
